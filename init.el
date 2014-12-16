@@ -30,6 +30,10 @@
 (require 'jcazevedo-editor)
 (require 'jcazevedo-global-keybindings)
 
+;; Require OSX specific settings
+(when (eq system-type 'darwin)
+  (require 'jcazevedo-osx))
+
 ;; Require the modules
 (when (file-exists-p jcazevedo-modules-file)
   (load jcazevedo-modules-file))
