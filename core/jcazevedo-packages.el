@@ -15,6 +15,7 @@
     expand-region
     magit
     projectile
+    smartparens
     zenburn-theme))
 
 (defun jcazevedo-packages-installed-p ()
