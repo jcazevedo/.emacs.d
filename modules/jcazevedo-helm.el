@@ -17,10 +17,11 @@
       helm-ff-file-name-history-use-recentf t)
 
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-set-key (kbd "M-x") 'helm-M-x)
 (global-unset-key (kbd "C-x c"))
 
 (define-key helm-command-map (kbd "o") 'helm-occur)
 (define-key helm-command-map (kbd "g") 'helm-do-grep)
+
+(helm-mode 1)
 
 (provide 'jcazevedo-helm)
