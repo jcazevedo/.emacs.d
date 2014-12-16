@@ -1,1 +1,8 @@
+*.elc
 *~
+.DS_Store
+auto-save-list
+elpa
+eshell
+projectile-bookmarks.eld
+savefile/
