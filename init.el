@@ -24,5 +24,6 @@
 ;; Require the core stuff
 (require 'jcazevedo-packages)
 (require 'jcazevedo-ui)
+(require 'jcazevedo-core)
 (require 'jcazevedo-editor)
 (require 'jcazevedo-global-keybindings)
