@@ -11,6 +11,7 @@
 
 (defvar jcazevedo-packages
   '(ack-and-a-half
+    diff-hl
     expand-region
     magit
     projectile

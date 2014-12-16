@@ -79,4 +79,8 @@
 ;; Enable winner-mode to manage window configurations
 (winner-mode +1)
 
+;; Enable diff-hl globally
+(global-diff-hl-mode +1)
+(add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+
 (provide 'jcazevedo-editor)

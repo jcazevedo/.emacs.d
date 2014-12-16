@@ -12,6 +12,8 @@
   "The directory that houses packages that are not yet available in ELPA (or MELPA).")
 (defvar jcazevedo-savefile-dir (expand-file-name "savefile" jcazevedo-dir)
   "This folder stores all the automatically generated save/history-files.")
+(defvar jcazevedo-modules-file (expand-file-name "jcazevedo-modules.el" jcazevedo-dir)
+  "This file contains a list of modules to be loaded.")
 
 (unless (file-exists-p jcazevedo-savefile-dir)
   (make-directory jcazevedo-savefile-dir))
@@ -27,3 +29,7 @@
 (require 'jcazevedo-core)
 (require 'jcazevedo-editor)
 (require 'jcazevedo-global-keybindings)
+
+;; Require the modules
+(when (file-exists-p jcazevedo-modules-file)
+  (load jcazevedo-modules-file))
