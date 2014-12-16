@@ -2,4 +2,5 @@
 (require 'jcazevedo-helm)
 (require 'jcazevedo-lisp)
 (require 'jcazevedo-markdown)
+(require 'jcazevedo-org)
 (require 'jcazevedo-scala)

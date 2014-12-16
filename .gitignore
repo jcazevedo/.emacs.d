@@ -2,8 +2,10 @@
 *~
 .DS_Store
 auto-save-list
+bookmarks
 elpa
 eshell
+org-clock-save.el
 projectile-bookmarks.eld
 recentf
 savefile/
