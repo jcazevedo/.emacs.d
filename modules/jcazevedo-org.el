@@ -3,13 +3,34 @@
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 (global-set-key (kbd "C-c c") 'org-capture)
 
+(defun jcazevedo-org-mode-defaults ()
+  (let ((oldmap (cdr (assoc 'prelude-mode minor-mode-map-alist)))
+        (newmap (make-sparse-keymap)))
+    (set-keymap-parent newmap oldmap)
+    (define-key newmap (kbd "C-c +") nil)
+    (define-key newmap (kbd "C-c -") nil)
+    (make-local-variable 'minor-mode-overriding-map-alist)
+    (push `(prelude-mode . ,newmap) minor-mode-overriding-map-alist)
+    (org-indent-mode t)
+    (visual-line-mode t)))
+
+(defun jcazevedo-clock-in-to-started (kw)
+  "Switch a task from TODO to STARTED when clocking in."
+  (when (and (not (and (boundp 'org-capture-mode) org-capture-mode))
+             (member (org-get-todo-state) (list "TODO")))
+    "STARTED"))
+
+(setq jcazevedo-org-mode-hook 'jcazevedo-org-mode-defaults)
+(add-hook 'org-mode-hook (lambda () (run-hooks 'jcazevedo-org-mode-hook)))
+
 (setq
  org-agenda-files (list "~/org")
  org-default-notes-file "~/org/refile.org"
- org-todo-keywords (quote ((sequence "TODO(t)" "STARTED(s)" "|" "DONE(d)")
+ org-todo-keywords (quote ((sequence "TODO(t)" "STARTED(s)" "ONGOING(o)" "|" "DONE(d)")
                            (sequence "WAITING(w)" "HOLD(h)" "|" "CANCELLED(c)" "MEETING(m)")))
  org-todo-keyword-faces (quote (("TODO" :foreground "red" :weight bold)
                                 ("STARTED" :foreground "dodger blue" :weight bold)
+                                ("ONGOING" :foreground "dodger blue" :weight bold)
                                 ("DONE" :foreground "forest green" :weight bold)
                                 ("WAITING" :foreground "orange" :weight bold)
                                 ("HOLD" :foreground "magenta" :weight bold)
@@ -21,6 +42,7 @@
                                 "* TODO %?" :clock-in t :clock-resume t)))
  org-drawers (quote ("PROPERTIES" "LOGBOOK"))
  org-clock-in-resume t
+ org-clock-in-switch-to-state 'jcazevedo-clock-in-to-started
  org-clock-into-drawer t
  org-clock-out-remove-zero-time-clocks t
  org-clock-persist t
@@ -33,19 +55,5 @@
  org-mobile-directory "~/Dropbox/MobileOrg")
 
 (org-clock-persistence-insinuate)
-
-(defun jcazevedo-org-mode-defaults ()
-  (let ((oldmap (cdr (assoc 'prelude-mode minor-mode-map-alist)))
-        (newmap (make-sparse-keymap)))
-    (set-keymap-parent newmap oldmap)
-    (define-key newmap (kbd "C-c +") nil)
-    (define-key newmap (kbd "C-c -") nil)
-    (make-local-variable 'minor-mode-overriding-map-alist)
-    (push `(prelude-mode . ,newmap) minor-mode-overriding-map-alist)
-    (org-indent-mode t)
-    (visual-line-mode t)))
-
-(setq jcazevedo-org-mode-hook 'jcazevedo-org-mode-defaults)
-(add-hook 'org-mode-hook (lambda () (run-hooks 'jcazevedo-org-mode-hook)))
 
 (provide 'jcazevedo-org)
