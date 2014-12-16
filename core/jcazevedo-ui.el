@@ -16,6 +16,9 @@
 ;; Enable y/n answers
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Disable blinking cursor
+(blink-cursor-mode -1)
+
 ;; Use zenburn as the default theme
 (load-theme 'zenburn t)
 
