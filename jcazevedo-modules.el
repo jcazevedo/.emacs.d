@@ -5,3 +5,4 @@
 (require 'jcazevedo-org)
 (require 'jcazevedo-restclient)
 (require 'jcazevedo-scala)
+(require 'jcazevedo-yaml)
