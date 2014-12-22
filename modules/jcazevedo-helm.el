@@ -1,4 +1,8 @@
-(jcazevedo-require-packages '(helm helm-projectile))
+(jcazevedo-require-packages
+ '(helm
+   helm-ag
+   helm-descbinds
+   helm-projectile))
 
 (require 'helm)
 (require 'helm-grep)
@@ -24,6 +28,18 @@
 (define-key helm-command-map   (kbd "g")   'helm-do-grep)
 (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
 
+(global-set-key (kbd "M-x")     'helm-M-x)
+(global-set-key (kbd "C-x C-m") 'helm-M-x)
+(global-set-key (kbd "M-y")     'helm-show-kill-ring)
+(global-set-key (kbd "C-x b")   'helm-mini)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-h f")   'helm-apropos)
+(global-set-key (kbd "C-h r")   'helm-info-emacs)
+(global-set-key (kbd "C-h C-l") 'helm-locate-library)
+
+(helm-descbinds-mode)
 (helm-mode 1)
+(helm-projectile-on)
 
 (provide 'jcazevedo-helm)

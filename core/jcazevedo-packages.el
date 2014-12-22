@@ -10,8 +10,7 @@
 (package-initialize)
 
 (defvar jcazevedo-packages
-  '(ack-and-a-half
-    diff-hl
+  '(diff-hl
     expand-region
     magit
     projectile

@@ -54,12 +54,6 @@
 (setq projectile-cache-file (expand-file-name "projectile.cache" jcazevedo-savefile-dir))
 (projectile-global-mode t)
 
-;; Shorter aliases for ack-and-a-half commands
-(defalias 'ack 'ack-and-a-half)
-(defalias 'ack-same 'ack-and-a-half-same)
-(defalias 'ack-find-file 'ack-and-a-half-find-file)
-(defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
-
 ;; Always delete and copy recursively
 (setq dired-recursive-deletes 'always)
 (setq dired-recursive-copies 'always)
