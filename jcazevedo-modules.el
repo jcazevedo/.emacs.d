@@ -5,4 +5,5 @@
 (require 'jcazevedo-org)
 (require 'jcazevedo-restclient)
 (require 'jcazevedo-scala)
+(require 'jcazevedo-twitter)
 (require 'jcazevedo-yaml)
