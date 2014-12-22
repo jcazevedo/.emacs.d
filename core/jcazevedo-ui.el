@@ -19,6 +19,9 @@
 ;; Disable blinking cursor
 (blink-cursor-mode -1)
 
+;; Disable startup screen
+(setq inhibit-startup-screen t)
+
 ;; Use zenburn as the default theme
 (load-theme 'zenburn t)
 
