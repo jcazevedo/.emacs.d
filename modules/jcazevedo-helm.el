@@ -26,7 +26,6 @@
 
 (define-key helm-command-map   (kbd "o")   'helm-occur)
 (define-key helm-command-map   (kbd "g")   'helm-do-grep)
-(define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
 
 (global-set-key (kbd "M-x")     'helm-M-x)
 (global-set-key (kbd "C-x C-m") 'helm-M-x)
