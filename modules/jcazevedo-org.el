@@ -3,7 +3,7 @@
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 (global-set-key (kbd "C-c c") 'org-capture)
 
-(defun jcazevedo-org-mode-defaults ()
+(defun jcazevedo/org-mode-defaults ()
   (let ((oldmap (cdr (assoc 'prelude-mode minor-mode-map-alist)))
         (newmap (make-sparse-keymap)))
     (set-keymap-parent newmap oldmap)
@@ -14,14 +14,14 @@
     (org-indent-mode t)
     (visual-line-mode t)))
 
-(defun jcazevedo-clock-in-to-started (kw)
+(defun jcazevedo/clock-in-to-started (kw)
   "Switch a task from TODO to STARTED when clocking in."
   (when (and (not (and (boundp 'org-capture-mode) org-capture-mode))
              (member (org-get-todo-state) (list "TODO")))
     "STARTED"))
 
-(setq jcazevedo-org-mode-hook 'jcazevedo-org-mode-defaults)
-(add-hook 'org-mode-hook (lambda () (run-hooks 'jcazevedo-org-mode-hook)))
+(setq jcazevedo/org-mode-hook 'jcazevedo/org-mode-defaults)
+(add-hook 'org-mode-hook (lambda () (run-hooks 'jcazevedo/org-mode-hook)))
 
 (setq
  org-agenda-files (list "~/org")
@@ -42,7 +42,7 @@
                                 "* TODO %?" :clock-in t :clock-resume t)))
  org-drawers (quote ("PROPERTIES" "LOGBOOK"))
  org-clock-in-resume t
- org-clock-in-switch-to-state 'jcazevedo-clock-in-to-started
+ org-clock-in-switch-to-state 'jcazevedo/clock-in-to-started
  org-clock-into-drawer t
  org-clock-out-remove-zero-time-clocks t
  org-clock-persist t
@@ -56,4 +56,4 @@
 
 (org-clock-persistence-insinuate)
 
-(provide 'jcazevedo-org)
+(provide 'jcazevedo/org)

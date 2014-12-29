@@ -1,4 +1,4 @@
-(defun jcazevedo-sudo-edit (&optional arg)
+(defun jcazevedo/sudo-edit (&optional arg)
   "Edit currently visited file as root.
 
 With a prefix ARG prompt for a file to visit.
@@ -10,4 +10,4 @@ buffer is not visiting a file."
                          (ido-read-file-name "Find file(as root): ")))
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
-(provide 'jcazevedo-core)
+(provide 'jcazevedo/core)

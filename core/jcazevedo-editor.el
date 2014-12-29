@@ -49,18 +49,18 @@
 (setq tramp-default-method "ssh")
 
 ;; Set up whitespace mode for text-mode
-(defun jcazevedo-enable-whitespace ()
+(defun jcazevedo/enable-whitespace ()
   (add-hook 'before-save-hook 'whitespace-cleanup nil t)
   (whitespace-mode +1))
 
-(add-hook 'text-mode-hook 'jcazevedo-enable-whitespace)
+(add-hook 'text-mode-hook 'jcazevedo/enable-whitespace)
 
 ;; Require expand-region
 (require 'expand-region)
 
 ;; Require projectile
 (require 'projectile)
-(setq projectile-cache-file (expand-file-name "projectile.cache" jcazevedo-savefile-dir))
+(setq projectile-cache-file (expand-file-name "projectile.cache" jcazevedo/savefile-dir))
 (projectile-global-mode t)
 
 ;; Always delete and copy recursively
@@ -86,4 +86,4 @@
 (global-diff-hl-mode +1)
 (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
 
-(provide 'jcazevedo-editor)
+(provide 'jcazevedo/editor)

@@ -1,4 +1,4 @@
-(jcazevedo-require-packages
+(jcazevedo/require-packages
  '(helm
    helm-ag
    helm-descbinds
@@ -41,4 +41,4 @@
 (helm-mode 1)
 (helm-projectile-on)
 
-(provide 'jcazevedo-helm)
+(provide 'jcazevedo/helm)
