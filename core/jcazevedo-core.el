@@ -11,6 +11,6 @@ buffer is not visiting a file."
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
 ;; Don't require a github token in paradox
-(setq paradox-github-token nil)
+(setq paradox-github-token t)
 
 (provide 'jcazevedo-core)
