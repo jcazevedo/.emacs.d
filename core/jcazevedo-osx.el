@@ -7,4 +7,4 @@
 
 (global-set-key (kbd "<f11>") 'jcazevedo/toggle-fullscreen)
 
-(provide 'jcazevedo/osx)
+(provide 'jcazevedo-osx)

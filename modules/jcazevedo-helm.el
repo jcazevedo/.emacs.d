@@ -41,4 +41,4 @@
 (helm-mode 1)
 (helm-projectile-on)
 
-(provide 'jcazevedo/helm)
+(provide 'jcazevedo-helm)

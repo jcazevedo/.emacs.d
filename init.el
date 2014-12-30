@@ -24,15 +24,15 @@
 (add-to-list 'load-path jcazevedo/vendor-dir)
 
 ;; Require the core stuff
-(require 'jcazevedo/packages)
-(require 'jcazevedo/ui)
-(require 'jcazevedo/core)
-(require 'jcazevedo/editor)
-(require 'jcazevedo/global-keybindings)
+(require 'jcazevedo-packages)
+(require 'jcazevedo-ui)
+(require 'jcazevedo-core)
+(require 'jcazevedo-editor)
+(require 'jcazevedo-global-keybindings)
 
 ;; Require OSX specific settings
 (when (eq system-type 'darwin)
-  (require 'jcazevedo/osx))
+  (require 'jcazevedo-osx))
 
 ;; Require the modules
 (when (file-exists-p jcazevedo/modules-file)

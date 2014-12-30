@@ -1,4 +1,4 @@
-(require 'jcazevedo/programming)
+(require 'jcazevedo-programming)
 (jcazevedo/require-packages '(scala-mode2 ensime))
 
 (require 'ensime)
@@ -11,4 +11,4 @@
                              (run-hooks 'jcazevedo/scala-mode-hook)))
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
-(provide 'jcazevedo/scala)
+(provide 'jcazevedo-scala)

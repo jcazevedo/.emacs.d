@@ -44,4 +44,4 @@ Missing packages are installed automatically."
 ;; Run package installation
 (jcazevedo/install-packages)
 
-(provide 'jcazevedo/packages)
+(provide 'jcazevedo-packages)

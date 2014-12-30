@@ -8,4 +8,4 @@
 (add-hook 'prog-mode-hook (lambda ()
                             (run-hooks 'jcazevedo/prog-mode-hook)))
 
-(provide 'jcazevedo/programming)
+(provide 'jcazevedo-programming)

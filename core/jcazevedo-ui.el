@@ -25,4 +25,4 @@
 ;; Use zenburn as the default theme
 (load-theme 'zenburn t)
 
-(provide 'jcazevedo/ui)
+(provide 'jcazevedo-ui)

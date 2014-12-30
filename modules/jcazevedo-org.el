@@ -56,4 +56,4 @@
 
 (org-clock-persistence-insinuate)
 
-(provide 'jcazevedo/org)
+(provide 'jcazevedo-org)

@@ -86,4 +86,4 @@
 (global-diff-hl-mode +1)
 (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
 
-(provide 'jcazevedo/editor)
+(provide 'jcazevedo-editor)

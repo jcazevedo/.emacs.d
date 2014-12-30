@@ -6,4 +6,4 @@
  twittering-use-icon-storage t
  twittering-number-of-tweets-on-retrieval 200)
 
-(provide 'jcazevedo/twitter)
+(provide 'jcazevedo-twitter)

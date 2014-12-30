@@ -1,3 +1,3 @@
-(require 'jcazevedo/programming)
+(require 'jcazevedo-programming)
 
-(provide 'jcazevedo/lisp)
+(provide 'jcazevedo-lisp)
