@@ -48,12 +48,23 @@
 ;; Keep in mind known issues with zsh - see emacs wiki
 (setq tramp-default-method "ssh")
 
-;; Set up whitespace mode for text-mode
+;; Enable whitespace just to cleanup, disabling it afterwards
+(defun jcazevedo/whitespace-cleanup ()
+  (let ((temp-enable-whitespace (not (bound-and-true-p whitespace-mode))))
+    (if temp-enable-whitespace (whitespace-mode +1))
+    (whitespace-cleanup)
+    (if temp-enable-whitespace (whitespace-mode -1))))
+
+;; Enable whitespace cleanup on save
+(defun jcazevedo/enable-whitespace-cleanup ()
+  (add-hook 'before-save-hook 'jcazevedo/whitespace-cleanup))
+
+;; Function to enable whitespace mode
 (defun jcazevedo/enable-whitespace ()
-  (add-hook 'before-save-hook 'whitespace-cleanup nil t)
+  (jcazevedo/enable-whitespace-cleanup)
   (whitespace-mode +1))
 
-(add-hook 'text-mode-hook 'jcazevedo/enable-whitespace)
+(jcazevedo/enable-whitespace-cleanup)
 
 ;; Require expand-region
 (require 'expand-region)
