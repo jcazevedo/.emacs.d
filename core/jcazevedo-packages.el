@@ -13,6 +13,7 @@
   '(diff-hl
     expand-region
     magit
+    paradox
     projectile
     smartparens
     zenburn-theme))

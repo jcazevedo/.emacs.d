@@ -10,4 +10,7 @@ buffer is not visiting a file."
                          (ido-read-file-name "Find file(as root): ")))
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
+;; Don't require a github token in paradox
+(setq paradox-github-token t)
+
 (provide 'jcazevedo-core)
