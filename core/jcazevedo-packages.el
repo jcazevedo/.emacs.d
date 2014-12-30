@@ -12,6 +12,7 @@
 (defvar jcazevedo/packages
   '(diff-hl
     expand-region
+    git-timemachine
     know-your-http-well
     magit
     paradox
