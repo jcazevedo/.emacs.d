@@ -8,3 +8,4 @@
 (require 'jcazevedo-twitter)
 (require 'jcazevedo-yaml)
 (require 'jcazevedo-c)
+(require 'jcazevedo-makefile)
