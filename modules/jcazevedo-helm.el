@@ -19,7 +19,14 @@
       helm-move-to-line-cycle-in-source     t
       helm-ff-search-library-in-sexp        t
       helm-ff-auto-update-initial-value     nil
-      helm-ff-file-name-history-use-recentf t)
+      helm-ff-file-name-history-use-recentf t
+      helm-buffers-fuzzy-matching           t
+      helm-recentf-fuzzy-match              t
+      helm-locate-fuzzy-match               t
+      helm-M-x-fuzzy-match                  t
+      helm-semantic-fuzzy-match             t
+      helm-imenu-fuzzy-match                t
+      helm-apropos-fuzzy-match              t)
 
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
