@@ -34,6 +34,9 @@
 (when (eq system-type 'darwin)
   (require 'jcazevedo-osx))
 
+;; Reduce the frequency of garbage collection
+(setq gc-cons-threshold 50000000)
+
 ;; Require the modules
 (when (file-exists-p jcazevedo/modules-file)
   (load jcazevedo/modules-file))
