@@ -44,6 +44,7 @@
 (global-set-key (kbd "C-h r")   'helm-info-emacs)
 (global-set-key (kbd "C-h C-l") 'helm-locate-library)
 
+(setq projectile-completion-system 'helm)
 (helm-descbinds-mode)
 (helm-mode 1)
 (helm-projectile-on)
