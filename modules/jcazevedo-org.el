@@ -26,9 +26,9 @@
  org-treat-S-cursor-todo-selection-as-state-change nil
  org-log-done nil
  org-capture-templates (quote (("t" "todo" entry (file "~/org/refile.org")
-                                "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
+                                "* TODO %?\n\n%a\n" :clock-in t :clock-resume t)
                                ("m" "Meeting" entry (file "~/org/refile.org")
-                                "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)))
+                                "* MEETING with %?\n" :clock-in t :clock-resume t)))
  org-drawers (quote ("PROPERTIES" "LOGBOOK"))
  org-clock-in-resume t
  org-clock-into-drawer t
