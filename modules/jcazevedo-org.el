@@ -38,7 +38,12 @@
  org-clock-auto-clock-resolution (quote when-no-clock-is-running)
  org-clock-report-include-clocking-task t
  org-agenda-clockreport-parameter-plist (quote (:link t :maxlevel 5 :fileskip0 t :compact t :narrow 80))
- org-clock-out-when-done nil)
+ org-clock-out-when-done nil
+ org-agenda-prefix-format (quote ((agenda . " %i %-15:c%?-12t% s")
+                                  (timeline . "  % s")
+                                  (todo . " %i %-12:c")
+                                  (tags . " %i %-12:c")
+                                  (search . " %i %-12:c"))))
 
 (org-clock-persistence-insinuate)
 
