@@ -38,7 +38,6 @@
  org-clock-auto-clock-resolution (quote when-no-clock-is-running)
  org-clock-report-include-clocking-task t
  org-agenda-clockreport-parameter-plist (quote (:link t :maxlevel 5 :fileskip0 t :compact t :narrow 80))
- org-columns-default-format "%40ITEM %TODO %5Effort(Effort){:} %6CLOCKSUM"
  org-clock-out-when-done nil)
 
 (org-clock-persistence-insinuate)
