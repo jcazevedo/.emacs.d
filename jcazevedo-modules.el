@@ -8,5 +8,6 @@
 (require 'jcazevedo-restclient)
 (require 'jcazevedo-ruby)
 (require 'jcazevedo-scala)
+(require 'jcazevedo-scheme)
 (require 'jcazevedo-twitter)
 (require 'jcazevedo-yaml)
