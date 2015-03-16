@@ -11,7 +11,7 @@
 (add-hook 'org-mode-hook (lambda () (run-hooks 'jcazevedo/org-mode-hook)))
 
 (setq
- org-directory "org/"
+ org-directory "~/org"
  org-agenda-files (list "~/org")
  org-default-notes-file "~/org/refile.org"
  org-mobile-directory "~/Dropbox/MobileOrg"
