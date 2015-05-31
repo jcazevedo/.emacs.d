@@ -1,0 +1,105 @@
+* Emacs
+
+WIP
+
+** Core
+
+#+begin_src emacs-lisp
+(setq load-prefer-newer t)
+
+(defvar jcazevedo/config-dir (file-name-directory load-file-name))
+#+end_src
+
+** Packages
+
+#+begin_src emacs-lisp
+(require 'cl)
+(require 'package)
+
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+
+(setq package-user-dir (expand-file-name "elpa" jcazevedo/config-dir))
+(package-initialize)
+
+(defun jcazevedo/require-package (package)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+(defun jcazevedo/require-packages (packages)
+  (mapc #'jcazevedo/require-package packages))
+#+end_src
+
+** UI
+
+#+begin_src emacs-lisp
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+
+(menu-bar-mode -1)
+
+(setq scroll-margin 0
+      scroll-conservatively 100000
+      scroll-preserve-screen-position 1)
+
+(line-number-mode t)
+(column-number-mode t)
+(size-indication-mode t)
+
+(fset 'yes-or-no-p 'y-or-n-p)
+#+end_src
+
+#+begin_src emacs-lisp
+(jcazevedo/require-packages '(zenburn-theme))
+
+(load-theme 'zenburn t)
+#+end_src
+
+** Editor
+
+#+begin_src emacs-lisp
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 8)
+(setq require-final-newline t)
+(delete-selection-mode t)
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+(setq undo-tree-history-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq undo-tree-auto-save-history t)
+(global-auto-revert-mode t)
+(global-hl-line-mode +1)
+#+end_src
+
+#+begin_src emacs-lisp
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+(setq uniquify-separator "/")
+(setq uniquify-after-kill-buffer-p t)
+(setq uniquify-ignore-buffers-re "^\\*")
+#+end_src
+
+#+begin_src emacs-lisp
+(defun jcazevedo/cleanup-maybe ()
+  (whitespace-cleanup))
+
+(defun jcazevedo/enable-whitespace ()
+  (add-hook 'before-save-hook 'jcazevedo/cleanup-maybe nil t)
+  (whitespace-mode +1))
+
+(require 'whitespace)
+(setq whitespace-line-column 80)
+(setq whitespace-style '(face tabs empty trailing lines-tail))
+#+end_src
+
+** Version control
+
+#+begin_src emacs-lisp
+(jcazevedo/require-packages '(magit))
+
+(setq magit-last-seen-setup-instructions "1.4.0")
+
+(global-set-key (kbd "C-x g") 'magit-status)
+#+end_src
