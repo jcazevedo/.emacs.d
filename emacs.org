@@ -1,7 +1,5 @@
 * Emacs
 
-WIP
-
 ** Core
 
 #+begin_src emacs-lisp
@@ -107,4 +105,11 @@ WIP
 (setq magit-last-seen-setup-instructions "1.4.0")
 
 (global-set-key (kbd "C-x g") 'magit-status)
+#+end_src
+
+** Text
+
+#+begin_src emacs-lisp
+(add-hook 'text-mode-hook 'fci-mode)
+(add-hook 'text-mode-hook 'jcazevedo/enable-whitespace)
 #+end_src
