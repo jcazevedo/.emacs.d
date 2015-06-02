@@ -92,7 +92,7 @@
 (require 'whitespace)
 (setq whitespace-line-column 80)
 (setq-default fill-column 80)
-(setq whitespace-style '(face tabs empty trailing lines-tail))
+(setq whitespace-style '(face tabs empty trailing))
 
 (jcazevedo/require-packages '(fill-column-indicator))
 #+end_src
