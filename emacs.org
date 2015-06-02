@@ -93,7 +93,10 @@ WIP
 
 (require 'whitespace)
 (setq whitespace-line-column 80)
+(setq-default fill-column 80)
 (setq whitespace-style '(face tabs empty trailing lines-tail))
+
+(jcazevedo/require-packages '(fill-column-indicator))
 #+end_src
 
 ** Version control
