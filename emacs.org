@@ -16,11 +16,13 @@ WIP
 (require 'cl)
 (require 'package)
 
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
 
 (setq package-user-dir (expand-file-name "elpa" jcazevedo/config-dir))
 (package-initialize)
+(package-refresh-contents)
 
 (defun jcazevedo/require-package (package)
   (unless (package-installed-p package)
