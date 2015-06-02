@@ -1,6 +1,6 @@
 * Emacs
 
-  This file is my `.emacs` configuration file. It's written in [[http://orgmode.org/][org-mode]] using
+  This file is my =.emacs= configuration file. It's written in [[http://orgmode.org/][org-mode]] using
   [[http://orgmode.org/worg/org-contrib/babel/][org-babel]].
 
 ** Core
