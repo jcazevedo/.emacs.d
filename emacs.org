@@ -5,7 +5,7 @@
   both documented and organized.
 
 ** Table of Contents                                                  :TOC_3:
- - [[#emacs][Emacs]]
+ - [[#joao-azevedos-emacs-initialization-file][Joao Azevedo's Emacs Initialization File]]
      - [[#core][Core]]
      - [[#packages][Packages]]
      - [[#ui][UI]]
@@ -17,115 +17,112 @@
 ** Core
 
 #+BEGIN_SRC emacs-lisp
-(setq load-prefer-newer t)
-
-(defvar jcazevedo/config-dir (file-name-directory load-file-name))
+  (setq load-prefer-newer t)
+  (defvar jcazevedo/config-dir (file-name-directory load-file-name))
 #+END_SRC
 
 ** Packages
 
 #+BEGIN_SRC emacs-lisp
-(require 'cl)
-(require 'package)
+  (require 'cl)
+  (require 'package)
 
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "https://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")))
+  (setq package-archives
+        '(("gnu" . "http://elpa.gnu.org/packages/")
+          ("marmalade" . "https://marmalade-repo.org/packages/")
+          ("melpa" . "http://melpa.org/packages/")))
 
-(setq package-user-dir (expand-file-name "elpa" jcazevedo/config-dir))
-(package-initialize)
-(package-refresh-contents)
+  (setq package-user-dir (expand-file-name "elpa" jcazevedo/config-dir))
+  (package-initialize)
+  (package-refresh-contents)
 
-(defun jcazevedo/require-package (package)
-  (unless (package-installed-p package)
-    (package-install package)))
+  (defun jcazevedo/require-package (package)
+    (unless (package-installed-p package)
+      (package-install package)))
 
-(defun jcazevedo/require-packages (packages)
-  (mapc #'jcazevedo/require-package packages))
+  (defun jcazevedo/require-packages (packages)
+    (mapc #'jcazevedo/require-package packages))
 #+END_SRC
 
 ** UI
 
 #+BEGIN_SRC emacs-lisp
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
+  (when (fboundp 'tool-bar-mode)
+    (tool-bar-mode -1))
 
-(menu-bar-mode -1)
+  (menu-bar-mode -1)
 
-(setq scroll-margin 0
-      scroll-conservatively 100000
-      scroll-preserve-screen-position 1)
+  (setq scroll-margin 0
+        scroll-conservatively 100000
+        scroll-preserve-screen-position 1)
 
-(line-number-mode t)
-(column-number-mode t)
-(size-indication-mode t)
+  (line-number-mode t)
+  (column-number-mode t)
+  (size-indication-mode t)
 
-(fset 'yes-or-no-p 'y-or-n-p)
+  (fset 'yes-or-no-p 'y-or-n-p)
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
-(jcazevedo/require-packages '(zenburn-theme))
-
-(load-theme 'zenburn t)
+  (jcazevedo/require-packages '(zenburn-theme))
+  (load-theme 'zenburn t)
 #+END_SRC
 
 ** Editor
 
 #+BEGIN_SRC emacs-lisp
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 8)
-(setq require-final-newline t)
-(delete-selection-mode t)
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
-(setq undo-tree-history-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq undo-tree-auto-save-history t)
-(global-auto-revert-mode t)
-(global-hl-line-mode +1)
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 8)
+  (setq require-final-newline t)
+  (delete-selection-mode t)
+  (setq backup-directory-alist
+        `((".*" . ,temporary-file-directory)))
+  (setq auto-save-file-name-transforms
+        `((".*" ,temporary-file-directory t)))
+  (setq undo-tree-history-directory-alist
+        `((".*" . ,temporary-file-directory)))
+  (setq undo-tree-auto-save-history t)
+  (global-auto-revert-mode t)
+  (global-hl-line-mode +1)
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'forward)
-(setq uniquify-separator "/")
-(setq uniquify-after-kill-buffer-p t)
-(setq uniquify-ignore-buffers-re "^\\*")
+  (require 'uniquify)
+  (setq uniquify-buffer-name-style 'forward)
+  (setq uniquify-separator "/")
+  (setq uniquify-after-kill-buffer-p t)
+  (setq uniquify-ignore-buffers-re "^\\*")
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
-(defun jcazevedo/cleanup-maybe ()
-  (whitespace-cleanup))
+  (defun jcazevedo/cleanup-maybe ()
+    (whitespace-cleanup))
 
-(defun jcazevedo/enable-whitespace ()
-  (add-hook 'before-save-hook 'jcazevedo/cleanup-maybe nil t)
-  (whitespace-mode +1))
+  (defun jcazevedo/enable-whitespace ()
+    (add-hook 'before-save-hook 'jcazevedo/cleanup-maybe nil t)
+    (whitespace-mode +1))
 
-(require 'whitespace)
-(setq whitespace-line-column 80)
-(setq-default fill-column 80)
-(setq whitespace-style '(face tabs empty trailing))
+  (require 'whitespace)
+  (setq whitespace-line-column 80)
+  (setq-default fill-column 80)
+  (setq whitespace-style '(face tabs empty trailing))
 
-(jcazevedo/require-packages '(fill-column-indicator))
+  (jcazevedo/require-packages '(fill-column-indicator))
 #+END_SRC
 
 ** Version control
 
 #+BEGIN_SRC emacs-lisp
-(jcazevedo/require-packages '(magit))
-
-(setq magit-last-seen-setup-instructions "1.4.0")
-
-(global-set-key (kbd "C-x g") 'magit-status)
+  (jcazevedo/require-packages '(magit))
+  (setq magit-last-seen-setup-instructions "1.4.0")
+  (global-set-key (kbd "C-x g") 'magit-status)
 #+END_SRC
 
 ** Text
 
 #+BEGIN_SRC emacs-lisp
-(add-hook 'text-mode-hook 'fci-mode)
-(add-hook 'text-mode-hook 'jcazevedo/enable-whitespace)
+  (add-hook 'text-mode-hook 'fci-mode)
+  (add-hook 'text-mode-hook 'jcazevedo/enable-whitespace)
 #+END_SRC
 
 *** Org
