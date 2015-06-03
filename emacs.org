@@ -3,6 +3,16 @@
   This file is my =.emacs= configuration file. It's written in [[http://orgmode.org/][org-mode]] using
   [[http://orgmode.org/worg/org-contrib/babel/][org-babel]].
 
+** Table of Contents                                                  :TOC_3:
+ - [[#emacs][Emacs]]
+     - [[#core][Core]]
+     - [[#packages][Packages]]
+     - [[#ui][UI]]
+     - [[#editor][Editor]]
+     - [[#version-control][Version control]]
+     - [[#text][Text]]
+         - [[#org][Org]]
+
 ** Core
 
 #+BEGIN_SRC emacs-lisp
@@ -115,4 +125,13 @@
 #+BEGIN_SRC emacs-lisp
 (add-hook 'text-mode-hook 'fci-mode)
 (add-hook 'text-mode-hook 'jcazevedo/enable-whitespace)
+#+END_SRC
+
+*** Org
+
+#+BEGIN_SRC emacs-lisp
+(jcazevedo/require-packages '(toc-org))
+
+(require 'toc-org)
+(add-hook 'org-mode-hook 'toc-org-enable)
 #+END_SRC
