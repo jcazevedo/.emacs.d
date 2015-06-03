@@ -1,7 +1,8 @@
-* Emacs
+* Joao Azevedo's Emacs Initialization File
 
-  This file is my =.emacs= configuration file. It's written in [[http://orgmode.org/][org-mode]] using
-  [[http://orgmode.org/worg/org-contrib/babel/][org-babel]].
+  This file is my Emacs initialization file. It's written in [[http://orgmode.org/][org-mode]] using
+  [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it
+  both documented and organized.
 
 ** Table of Contents                                                  :TOC_3:
  - [[#emacs][Emacs]]
