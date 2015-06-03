@@ -5,15 +5,15 @@
 
 ** Core
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
 (setq load-prefer-newer t)
 
 (defvar jcazevedo/config-dir (file-name-directory load-file-name))
-#+end_src
+#+END_SRC
 
 ** Packages
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
 (require 'cl)
 (require 'package)
 
@@ -31,11 +31,11 @@
 
 (defun jcazevedo/require-packages (packages)
   (mapc #'jcazevedo/require-package packages))
-#+end_src
+#+END_SRC
 
 ** UI
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
 
@@ -50,17 +50,17 @@
 (size-indication-mode t)
 
 (fset 'yes-or-no-p 'y-or-n-p)
-#+end_src
+#+END_SRC
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
 (jcazevedo/require-packages '(zenburn-theme))
 
 (load-theme 'zenburn t)
-#+end_src
+#+END_SRC
 
 ** Editor
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 8)
 (setq require-final-newline t)
@@ -74,17 +74,17 @@
 (setq undo-tree-auto-save-history t)
 (global-auto-revert-mode t)
 (global-hl-line-mode +1)
-#+end_src
+#+END_SRC
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 (setq uniquify-separator "/")
 (setq uniquify-after-kill-buffer-p t)
 (setq uniquify-ignore-buffers-re "^\\*")
-#+end_src
+#+END_SRC
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
 (defun jcazevedo/cleanup-maybe ()
   (whitespace-cleanup))
 
@@ -98,21 +98,21 @@
 (setq whitespace-style '(face tabs empty trailing))
 
 (jcazevedo/require-packages '(fill-column-indicator))
-#+end_src
+#+END_SRC
 
 ** Version control
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
 (jcazevedo/require-packages '(magit))
 
 (setq magit-last-seen-setup-instructions "1.4.0")
 
 (global-set-key (kbd "C-x g") 'magit-status)
-#+end_src
+#+END_SRC
 
 ** Text
 
-#+begin_src emacs-lisp
+#+BEGIN_SRC emacs-lisp
 (add-hook 'text-mode-hook 'fci-mode)
 (add-hook 'text-mode-hook 'jcazevedo/enable-whitespace)
-#+end_src
+#+END_SRC
