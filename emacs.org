@@ -53,6 +53,22 @@
   (setq large-file-warning-threshold 100000000)
 #+END_SRC
 
+   Add a function to rename the buffer and file it is currently visiting. Thanks
+   to Bozhidar Batsov's prelude for this function.
+
+#+BEGIN_SRC emacs-lisp
+  (defun jcazevedo/rename-buffer-and-file ()
+    (interactive)
+    (let ((filename (buffer-file-name)))
+      (if (not (and filename (file-exists-p filename)))
+          (rename-buffer (read-from-minibuffer "New name: " (buffer-name)))
+        (let ((new-name (read-file-name "New name: " filename)))
+          (cond
+           ((vc-backend filename) (vc-rename-file filename new-name))
+           (t
+            (rename-file filename new-name t)
+            (set-visited-file-name new-name t t)))))))
+#+END_SRC
 *** Global Variables
 
     The following block defines variables that are used throughout the whole
