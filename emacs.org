@@ -178,6 +178,9 @@
   (size-indication-mode t)
 #+END_SRC
 
+   Enable y/n answers, since most commands require you to explicitly write =yes=
+   or =no=, and that's cumbersome.
+
 #+BEGIN_SRC emacs-lisp
   (fset 'yes-or-no-p 'y-or-n-p)
 #+END_SRC
