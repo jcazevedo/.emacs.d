@@ -19,8 +19,28 @@
 
 ** Core
 
+   The following options are relevant throughout the whole config and relate to
+   core settings for Emacs.
+
+   The =load-prefer-newer= option was introduced in Emacs 24.4 and allows one to
+   specify how the =load= function chooses the files to load. By default its
+   value is =nil=, which means that, in the presence of both an =.el= and =.elc=
+   file with the same name, the =load= function will always prefer the =.elc=. I
+   want to avoid loading outdated =.elc= files, so this option is set to =t=.
+
 #+BEGIN_SRC emacs-lisp
   (setq load-prefer-newer t)
+#+END_SRC
+
+   The following block defines variables that are used throughout the whole
+   initialization file. The variables are usually prefixed with
+   =jcazevedo/=. Currently, they have the following values:
+
+| Variable Name          | Variable Description                           |
+|------------------------+------------------------------------------------|
+| =jcazevedo/config-dir= | The directory where the initialization file is |
+
+#+BEGIN_SRC emacs-lisp
   (defvar jcazevedo/config-dir (file-name-directory load-file-name))
 #+END_SRC
 
