@@ -21,7 +21,8 @@
      - [[#packages][Packages]]
      - [[#ui][UI]]
      - [[#editor][Editor]]
-     - [[#version-control][Version control]]
+     - [[#version-control][Version Control]]
+     - [[#global-key-bindings][Global Key Bindings]]
      - [[#text][Text]]
          - [[#org][Org]]
 
@@ -302,13 +303,31 @@ programming sessions.\\
   (jcazevedo/require-packages '(fill-column-indicator))
 #+END_SRC
 
-** Version control
+** Version Control
 
 #+BEGIN_SRC emacs-lisp
   (jcazevedo/require-packages '(magit))
   (setq magit-last-seen-setup-instructions "1.4.0")
   (global-set-key (kbd "C-x g") 'magit-status)
 #+END_SRC
+
+** Global Key Bindings
+
+   The following defines extra global key bindings.
+
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-c r") 'jcazevedo/rename-buffer-and-file)
+  (global-set-key (kbd "C-c D") 'jcazevedo/delete-file-and-buffer)
+  (global-set-key (kbd "C-x g") 'magit-status)
+#+END_SRC
+
+   The following table lists all relevant global key bindings when using this
+   configuration, along with their description.
+
+| Key Binding      | Description                                                                                                        |
+| <kbd>C-c r</kbd> | Renames the current buffer and, if the buffer is visiting a file, rename the file as well.                         |
+| <kbd>C-c D</kbd> | Kills the current buffer and deletes the file it is visiting.                                                      |
+| <kbd>C-x g</kbd> | Opens a Magit status buffer for the Git repository contaning the file or directory the current buffer is visiting. |
 
 ** Text
 
