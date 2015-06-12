@@ -6,7 +6,14 @@
   This file is my Emacs initialization file. It's written in [[http://orgmode.org/][org-mode]] using
   [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it both
   documented and organized. It is currently built as a single =.org= file, but I
-  aim to eventually make it more modular.
+  aim to eventually make it more modular. This configuration reflects my
+  personal preferences when using Emacs.
+
+  I use Emacs primarily on Mac OS X, using the Emacs mac port [[http://www.math.s.chiba-u.ac.jp/~mituharu/emacs-mac.git/][from Yamamoto
+  Mitsuharu]], which I usually install and update using [[http://brew.sh/][Homebrew]] and [[https://github.com/railwaycat/homebrew-emacsmacport][this
+  formulae]].
+
+  The latest Emacs version that I've run this configuration with is =24.5.1=.
 
 ** Table of Contents                                                  :TOC_3:
      - [[#core][Core]]
