@@ -65,9 +65,10 @@
 
     The following variables are defined:
 
-| Variable Name          | Variable Description                           |
-|------------------------+------------------------------------------------|
-| =jcazevedo/config-dir= | The directory where the initialization file is |
+| Variable Name          | Variable Description                                            |
+|------------------------+-----------------------------------------------------------------|
+| =jcazevedo/config-dir= | The directory where the initialization file is.                 |
+| =jcazevedo/elpa-dir=   | The directory where packages installed from =package.el= go to. |
 
 ** Packages
 
