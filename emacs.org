@@ -171,9 +171,14 @@
   (column-number-mode t)
 #+END_SRC
 
+   Enable =size-indication-mode= globally, toggling buffer size display in the
+   mode line.
+
 #+BEGIN_SRC emacs-lisp
   (size-indication-mode t)
+#+END_SRC
 
+#+BEGIN_SRC emacs-lisp
   (fset 'yes-or-no-p 'y-or-n-p)
 #+END_SRC
 
