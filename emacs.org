@@ -148,6 +148,18 @@
   (menu-bar-mode -1)
 #+END_SRC
 
+   Disable the blinking cursor. It is kind of an annoyance.
+
+#+BEGIN_SRC emacs-lisp
+  (blink-cursor-mode -1)
+#+END_SRC
+
+   Disable the startup screen.
+
+#+BEGIN_SRC emacs-lisp
+  (setq inhibit-startup-screen t)
+#+END_SRC
+
    Set the number of lines of margin at the top and bottom of a window to 0,
    avoiding recentering the window whenever the cursor gets close to the limits
    of the window.
