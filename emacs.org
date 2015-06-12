@@ -55,7 +55,7 @@
 #+END_SRC
 
    Add a function to rename the buffer and file it is currently visiting. Thanks
-   to Bozhidar Batsov's prelude for this function.
+   to Bozhidar Batsov's [[https://github.com/bbatsov/prelude][prelude]] for this function.
 
 #+BEGIN_SRC emacs-lisp
   (defun jcazevedo/rename-buffer-and-file ()
@@ -72,7 +72,7 @@
 #+END_SRC
 
    Add a function to kill the current buffer and delete the file it is
-   visiting. Thanks to Bozhidar Batsov's prelude for this function.
+   visiting. Thanks to Bozhidar Batsov's [[https://github.com/bbatsov/prelude][prelude]] for this function.
 
 #+BEGIN_SRC emacs-lisp
   (defun jcazevedo/delete-file-and-buffer ()
