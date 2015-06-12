@@ -288,11 +288,8 @@ programming sessions.\\
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
-  (defun jcazevedo/cleanup-maybe ()
-    (whitespace-cleanup))
-
   (defun jcazevedo/enable-whitespace ()
-    (add-hook 'before-save-hook 'jcazevedo/cleanup-maybe nil t)
+    (add-hook 'before-save-hook 'whitespace-cleanup)
     (whitespace-mode +1))
 
   (require 'whitespace)
