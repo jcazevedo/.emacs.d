@@ -119,6 +119,18 @@
     (mapc #'jcazevedo/require-package packages))
 #+END_SRC
 
+   Paradox modernizes Emacs' package menu, providing GitHub integration, better
+   mode-line information and asynchronous upgrading. The following sets the
+   =list-packages= command to use =paradox-list-packages= instead. No value is
+   set for =paradox-github-token=, since I don't want to star repositories from
+   the package list.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(paradox))
+  (setq paradox-github-token t)
+  (fset 'list-packages 'paradox-list-packages)
+#+END_SRC
+
 ** UI
 
    The following options are related to the user interface of Emacs.
