@@ -69,6 +69,23 @@
             (rename-file filename new-name t)
             (set-visited-file-name new-name t t)))))))
 #+END_SRC
+
+   Add a function to kill the current buffer and delete the file it is
+   visiting. Thanks to Bozhidar Batsov's prelude for this function.
+
+#+BEGIN_SRC emacs-lisp
+  (defun jcazevedo/delete-file-and-buffer ()
+    (interactive)
+    (let ((filename (buffer-file-name)))
+      (when filename
+        (if (vc-backend filename)
+            (vc-delete-file filename)
+          (when (y-or-n-p (format "Are you sure you want to delete %s? " filename))
+            (delete-file filename)
+            (message "Deleted file %s" filename)
+            (kill-buffer))))))
+#+END_SRC
+
 *** Global Variables
 
     The following block defines variables that are used throughout the whole
