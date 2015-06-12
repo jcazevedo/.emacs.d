@@ -87,6 +87,30 @@
             (kill-buffer))))))
 #+END_SRC
 
+   Add a function to open a file as root, and hook it to the
+   =find-file-hook=. Thanks to Bozhidar Batsov's [[https://github.com/bbatsov/prelude][prelude]] for this function.
+
+#+BEGIN_SRC emacs-lisp
+  (require 'tramp)
+
+  (defun jcazevedo/file-owned-by-user-p (filename)
+    (equal (nth 2 (file-attributes filename 'integer))
+           (user-uid)))
+
+  (defun jcazevedo/find-alternate-file-as-root (filename)
+    (find-alternate-file (concat "/sudo:root@localhost:" filename)))
+
+  (defun jcazevedo/reopen-as-root ()
+    (unless (or (tramp-tramp-file-p buffer-file-name)
+                (equal major-mode 'dired-mode)
+                (not (file-exists-p (file-name-directory buffer-file-name)))
+                (file-writable-p buffer-file-name)
+                (jcazevedo/file-owned-by-user-p buffer-file-name))
+      (jcazevedo/find-alternate-file-as-root buffer-file-name)))
+
+  (add-hook 'find-file-hook 'jcazevedo/reopen-as-root)
+#+END_SRC
+
 *** Global Variables
 
     The following block defines variables that are used throughout the whole
