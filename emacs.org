@@ -132,8 +132,8 @@
   (setq package-user-dir jcazevedo/elpa-dir)
 #+END_SRC
 
-   Refresh the contents of the package index, so that we always have the most
-   recent version of the package list, and initialize installed packages.
+   Initialize installed packages and refresh the contents of the package index,
+   so that we always have the most recent version of the package list.
 
 #+BEGIN_SRC emacs-lisp
   (package-initialize)
