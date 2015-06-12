@@ -190,6 +190,7 @@
 
 #+BEGIN_QUOTE
 It's easy for your eyes and designed to keep you in the zone for long programming sessions.
+
 -- [[http://kippura.org/zenburnpage/][The Official Zenburn Page]]
 #+END_QUOTE
 
