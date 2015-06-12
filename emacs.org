@@ -47,6 +47,12 @@
   (setq gc-cons-threshold 50000000)
 #+END_SRC
 
+   The following produces a warning when opening files bigger than 100MB.
+
+#+BEGIN_SRC emacs-lisp
+  (setq large-file-warning-threshold 100000000)
+#+END_SRC
+
 *** Global Variables
 
     The following block defines variables that are used throughout the whole
