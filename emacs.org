@@ -40,6 +40,13 @@
   (setq load-prefer-newer t)
 #+END_SRC
 
+   By default, garbage collection happens every 0.76MB of allocated data. This
+   sets it to happen on each 50MB.
+
+#+BEGIN_SRC emacs-lisp
+  (setq gc-cons-threshold 50000000)
+#+END_SRC
+
 *** Global Variables
 
     The following block defines variables that are used throughout the whole
