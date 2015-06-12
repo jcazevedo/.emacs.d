@@ -1,11 +1,14 @@
-* Joao Azevedo's Emacs Initialization File
+#+TITLE:  Joao Azevedo's Emacs Initialization File
+#+AUTHOR: Joao Azevedo
+#+EMAIL:  joao.c.azevedo@gmail.com
+#+DATE:   2015-06-12 Fri
 
   This file is my Emacs initialization file. It's written in [[http://orgmode.org/][org-mode]] using
-  [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it
-  both documented and organized.
+  [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it both
+  documented and organized. It is currently built as a single huge =.org= file,
+  but I aim to eventually make it more modular.
 
 ** Table of Contents                                                  :TOC_3:
- - [[#joao-azevedos-emacs-initialization-file][Joao Azevedo's Emacs Initialization File]]
      - [[#core][Core]]
      - [[#packages][Packages]]
      - [[#ui][UI]]
