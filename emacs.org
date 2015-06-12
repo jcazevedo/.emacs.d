@@ -164,8 +164,14 @@
   (line-number-mode t)
 #+END_SRC
 
+   Enable =column-number-mode= globally, toggling column number display in the
+   mode line.
+
 #+BEGIN_SRC emacs-lisp
   (column-number-mode t)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
   (size-indication-mode t)
 
   (fset 'yes-or-no-p 'y-or-n-p)
