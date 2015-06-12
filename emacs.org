@@ -5,11 +5,12 @@
 
   This file is my Emacs initialization file. It's written in [[http://orgmode.org/][org-mode]] using
   [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it both
-  documented and organized. It is currently built as a single huge =.org= file,
-  but I aim to eventually make it more modular.
+  documented and organized. It is currently built as a single =.org= file, but I
+  aim to eventually make it more modular.
 
 ** Table of Contents                                                  :TOC_3:
      - [[#core][Core]]
+         - [[#global-variables][Global Variables]]
      - [[#packages][Packages]]
      - [[#ui][UI]]
      - [[#editor][Editor]]
@@ -32,17 +33,20 @@
   (setq load-prefer-newer t)
 #+END_SRC
 
-   The following block defines variables that are used throughout the whole
-   initialization file. The variables are usually prefixed with
-   =jcazevedo/=. Currently, they have the following values:
+*** Global Variables
 
-| Variable Name          | Variable Description                           |
-|------------------------+------------------------------------------------|
-| =jcazevedo/config-dir= | The directory where the initialization file is |
+    The following block defines variables that are used throughout the whole
+    initialization file. The variables are usually prefixed with =jcazevedo/=.
 
 #+BEGIN_SRC emacs-lisp
   (defvar jcazevedo/config-dir (file-name-directory load-file-name))
 #+END_SRC
+
+    The following variables are defined:
+
+| Variable Name          | Variable Description                           |
+|------------------------+------------------------------------------------|
+| =jcazevedo/config-dir= | The directory where the initialization file is |
 
 ** Packages
 
