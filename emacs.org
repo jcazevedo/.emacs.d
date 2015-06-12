@@ -185,6 +185,18 @@
   (fset 'yes-or-no-p 'y-or-n-p)
 #+END_SRC
 
+   Use the [[https://github.com/bbatsov/zenburn-emacs][zenburn-theme]]. It was originally designed for vim by Jani Nurminen,
+   and later ported to Emacs by Bozhidar Batsov.
+
+#+BEGIN_QUOTE
+It's easy for your eyes and designed to keep you in the zone for long programming sessions.
+-- [[http://kippura.org/zenburnpage/][The Official Zenburn Page]]
+#+END_QUOTE
+
+   It looks like this:
+
+   [[http://kippura.org/i/zenburn.png]]
+
 #+BEGIN_SRC emacs-lisp
   (jcazevedo/require-packages '(zenburn-theme))
   (load-theme 'zenburn t)
