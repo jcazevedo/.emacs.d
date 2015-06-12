@@ -47,6 +47,7 @@
 
 #+BEGIN_SRC emacs-lisp
   (defvar jcazevedo/config-dir (file-name-directory load-file-name))
+  (defvar jcazevedo/elpa-dir (expand-file-name "elpa" jcazevedo/config-dir))
 #+END_SRC
 
     The following variables are defined:
@@ -57,18 +58,28 @@
 
 ** Packages
 
-#+BEGIN_SRC emacs-lisp
-  (require 'cl)
-  (require 'package)
+   The following options are related to the installation of packages required by
+   this config.
 
+   =package.el= is the built-in package manager in Emacs 24.
+
+#+BEGIN_SRC emacs-lisp
+  (require 'package)
+#+END_SRC
+
+   Update the package archives to include the default package archive (=gnu=),
+   as well as =marmalde= and =melpa=.
+
+#+BEGIN_SRC emacs-lisp
   (setq package-archives
         '(("gnu" . "http://elpa.gnu.org/packages/")
           ("marmalade" . "https://marmalade-repo.org/packages/")
           ("melpa" . "http://melpa.org/packages/")))
+#+END_SRC
 
-  (setq package-user-dir (expand-file-name "elpa" jcazevedo/config-dir))
+#+BEGIN_SRC emacs-lip
+  (setq package-user-dir jcazevedo/elpa-dir)
   (package-initialize)
-  (package-refresh-contents)
 
   (defun jcazevedo/require-package (package)
     (unless (package-installed-p package)
