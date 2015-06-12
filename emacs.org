@@ -153,7 +153,7 @@
     (mapc #'jcazevedo/require-package packages))
 #+END_SRC
 
-   Paradox modernizes Emacs' package menu, providing GitHub integration, better
+   [[https://github.com/Malabarba/paradox/][Paradox]] modernizes Emacs' package menu, providing GitHub integration, better
    mode-line information and asynchronous upgrading. The following sets the
    =list-packages= command to use =paradox-list-packages= instead. No value is
    set for =paradox-github-token=, since I don't want to star repositories from
