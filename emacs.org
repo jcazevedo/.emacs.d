@@ -285,6 +285,24 @@ programming sessions.\\
   (load-theme 'zenburn t)
 #+END_SRC
 
+   Add a function to have a proper fullscreen. I like it better in Mac OS X than
+   its native fullscreen support, which opens in a separate desktop. It should
+   also work under an X server.
+
+#+BEGIN_SRC emacs-lisp
+  (defun jcazevedo/fullscreen ()
+    (interactive)
+    (cond
+     ((eq system-type 'darwin)
+      (set-frame-parameter
+       nil 'fullscreen
+       (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+     ((eq window-system 'x)
+      (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
+                             '(2 "_NET_WM_STATE_FULLSCREEN" 0)))
+      (error "Unable to toggle fullscreen")))
+#+END_SRC
+
 ** Editor
 
 #+BEGIN_SRC emacs-lisp
@@ -337,6 +355,7 @@ programming sessions.\\
    The following defines extra global key bindings.
 
 #+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "<f11>") 'jcazevedo/fullscreen)
   (global-set-key (kbd "C-c r") 'jcazevedo/rename-buffer-and-file)
   (global-set-key (kbd "C-c D") 'jcazevedo/delete-file-and-buffer)
   (global-set-key (kbd "C-x g") 'magit-status)
