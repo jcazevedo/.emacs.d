@@ -307,11 +307,36 @@ programming sessions.\\
 
    The following options are related to the editor experience under Emacs.
 
+   Don't use tabs to indent. Modes that handle files that require tabs (such as
+   Makefiles) should enable them explicitly.
+
 #+BEGIN_SRC emacs-lisp
   (setq-default indent-tabs-mode nil)
+#+END_SRC
+
+   Even though we're not using tabs to indent, we want to keep the correct
+   appearence of them, which historically is an 8-character offset.
+
+#+BEGIN_SRC emacs-lisp
   (setq-default tab-width 8)
+#+END_SRC
+
+   Require a newline at the end of a file
+
+#+BEGIN_SRC emacs-lisp
   (setq require-final-newline t)
+#+END_SRC
+
+   Enable =delete-selection-mode= globally, which enables deleting a whole
+   selection with a keypress.
+
+#+BEGIN_SRC emacs-lisp
   (delete-selection-mode t)
+#+END_SRC
+
+   Store backups, autosave files and undo-tree history in the tmp dir.
+
+#+BEGIN_SRC emacs-lisp
   (setq backup-directory-alist
         `((".*" . ,temporary-file-directory)))
   (setq auto-save-file-name-transforms
@@ -319,7 +344,18 @@ programming sessions.\\
   (setq undo-tree-history-directory-alist
         `((".*" . ,temporary-file-directory)))
   (setq undo-tree-auto-save-history t)
+#+END_SRC
+
+   Enable =global-auto-revert-mode= globally, which causes buffers to
+   automatically revert when underlying files are changed externally. This is
+   specially useful under version control (branch switching and stuff) or when
+   compilers/linters automatically change a given file.
+
+#+BEGIN_SRC emacs-lisp
   (global-auto-revert-mode t)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
   (global-hl-line-mode +1)
 #+END_SRC
 
