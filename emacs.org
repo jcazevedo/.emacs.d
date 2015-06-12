@@ -157,8 +157,14 @@
   (setq scroll-preserve-screen-position 1)
 #+END_SRC
 
+   Enable =line-number-mode= globally, toggling line number display in the mode
+   line.
+
 #+BEGIN_SRC emacs-lisp
   (line-number-mode t)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
   (column-number-mode t)
   (size-indication-mode t)
 
