@@ -305,6 +305,8 @@ programming sessions.\\
 
 ** Editor
 
+   The following options are related to the editor experience under Emacs.
+
 #+BEGIN_SRC emacs-lisp
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 8)
