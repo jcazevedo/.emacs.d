@@ -101,16 +101,16 @@
    Refresh the contents of the package index, so that we always have the most
    recent version of the package list, and initialize installed packages.
 
-#+BEGIN_SRC
-  (package-refresh-contents)
+#+BEGIN_SRC emacs-lisp
   (package-initialize)
+  (package-refresh-contents)
 #+END_SRC
 
    The following methods allow one to define packages to be installed. The
    =jcazevedo/require-package= method verifies that the package is not yet
    installed before trying to install it.
 
-#+BEGIN_SRC
+#+BEGIN_SRC emacs-lisp
   (defun jcazevedo/require-package (package)
     (unless (package-installed-p package)
       (package-install package)))
@@ -121,16 +121,43 @@
 
 ** UI
 
+   The following options are related to the user interface of Emacs.
+
+   Disable the toolbar, which isn't auto-loaded when in a tty.
+
 #+BEGIN_SRC emacs-lisp
   (when (fboundp 'tool-bar-mode)
     (tool-bar-mode -1))
+#+END_SRC
 
+   Disable the menu bar.
+
+#+BEGIN_SRC emacs-lisp
   (menu-bar-mode -1)
+#+END_SRC
 
-  (setq scroll-margin 0
-        scroll-conservatively 100000
-        scroll-preserve-screen-position 1)
+   Set the number of lines of margin at the top and bottom of a window to 0,
+   avoiding recentering the window whenever the cursor gets close to the limits
+   of the window.
 
+#+BEGIN_SRC emacs-lisp
+  (setq scroll-margin 0)
+#+END_SRC
+
+   Avoid recentering the point, scrolling just enough text to bring point into
+   view, even if you move far away.
+
+#+BEGIN_SRC emacs-lisp
+  (setq scroll-conservatively 100000)
+#+END_SRC
+
+   Make the point always keep its screen position on scroll commands.
+
+#+BEGIN_SRC emacs-lisp
+  (setq scroll-preserve-screen-position 1)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
   (line-number-mode t)
   (column-number-mode t)
   (size-indication-mode t)
