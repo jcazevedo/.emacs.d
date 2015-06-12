@@ -65,10 +65,10 @@
 
     The following variables are defined:
 
-| Variable Name          | Variable Description                                            |
-|------------------------+-----------------------------------------------------------------|
-| =jcazevedo/config-dir= | The directory where the initialization file is.                 |
-| =jcazevedo/elpa-dir=   | The directory where packages installed from =package.el= go to. |
+| Variable Name          | Variable Description                                    |
+|------------------------+---------------------------------------------------------|
+| =jcazevedo/config-dir= | The directory where the initialization file is.         |
+| =jcazevedo/elpa-dir=   | The directory where packages installed from elpa go to. |
 
 ** Packages
 
@@ -91,10 +91,26 @@
           ("melpa" . "http://melpa.org/packages/")))
 #+END_SRC
 
+   Set the directory for the contents of packages downloaded from the Emacs Lisp
+   Package Archive (elpa).
+
 #+BEGIN_SRC emacs-lip
   (setq package-user-dir jcazevedo/elpa-dir)
-  (package-initialize)
+#+END_SRC
 
+   Refresh the contents of the package index, so that we always have the most
+   recent version of the package list, and initialize installed packages.
+
+#+BEGIN_SRC
+  (package-refresh-contents)
+  (package-initialize)
+#+END_SRC
+
+   The following methods allow one to define packages to be installed. The
+   =jcazevedo/require-package= method verifies that the package is not yet
+   installed before trying to install it.
+
+#+BEGIN_SRC
   (defun jcazevedo/require-package (package)
     (unless (package-installed-p package)
       (package-install package)))
