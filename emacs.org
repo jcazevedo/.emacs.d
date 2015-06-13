@@ -514,6 +514,17 @@ programming sessions.\\
   (volatile-highlights-mode t)
 #+END_SRC
 
+   Anzu enhances isearch and query-replace by showing total matches and current
+   match position. It is enabled everywhere. =anzu-query-replace= and
+   =anzu-query-replace-regexp= provide better alternatives for the native query
+   and replace mechanism.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(anzu))
+  (require 'anzu)
+  (global-anzu-mode)
+#+END_SRC
+
 *** Projects
 
     In order to have the notion of a project inside Emacs, I use [[https://github.com/bbatsov/projectile][projectile]]. It
@@ -544,19 +555,23 @@ programming sessions.\\
 
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "<f11>") 'jcazevedo/fullscreen)
-  (global-set-key (kbd "C-c r") 'jcazevedo/rename-buffer-and-file)
+  (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
   (global-set-key (kbd "C-c D") 'jcazevedo/delete-file-and-buffer)
+  (global-set-key (kbd "C-c r") 'jcazevedo/rename-buffer-and-file)
   (global-set-key (kbd "C-x g") 'magit-status)
+  (global-set-key (kbd "M-%") 'anzu-query-replace)
 #+END_SRC
 
    The following table lists all relevant global key bindings when using this
    configuration, along with their description.
 
 | Key Binding                        | Description                                                                                                        |
-| @@html:<kbd>@@f11@@html:</kbd>@@   | Toggles fullscreen.                                                                                                |
-| @@html:<kbd>@@C-c r@@html:</kbd>@@ | Renames the current buffer and, if the buffer is visiting a file, rename the file as well.                         |
+| @@html:<kbd>@@C-M-%@@html:</kbd>@@ | Query and replace using a regexp in anzu.                                                                          |
 | @@html:<kbd>@@C-c D@@html:</kbd>@@ | Kills the current buffer and deletes the file it is visiting.                                                      |
+| @@html:<kbd>@@C-c r@@html:</kbd>@@ | Renames the current buffer and, if the buffer is visiting a file, rename the file as well.                         |
 | @@html:<kbd>@@C-x g@@html:</kbd>@@ | Opens a Magit status buffer for the Git repository contaning the file or directory the current buffer is visiting. |
+| @@html:<kbd>@@M-%@@html:</kbd>@@   | Query and replace in anzu.                                                                                         |
+| @@html:<kbd>@@f11@@html:</kbd>@@   | Toggles fullscreen.                                                                                                |
 
 ** Text
 
