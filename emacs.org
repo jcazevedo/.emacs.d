@@ -119,14 +119,16 @@
 #+BEGIN_SRC emacs-lisp
   (defvar jcazevedo/config-dir (file-name-directory load-file-name))
   (defvar jcazevedo/elpa-dir (expand-file-name "elpa" jcazevedo/config-dir))
+  (defvar jcazevedo/savefile-dir (expand-file-name "savefile" jcazevedo/config-dir))
 #+END_SRC
 
     The following variables are defined:
 
-| Variable Name          | Variable Description                                    |
-|------------------------+---------------------------------------------------------|
-| =jcazevedo/config-dir= | The directory where the initialization file is.         |
-| =jcazevedo/elpa-dir=   | The directory where packages installed from elpa go to. |
+| Variable Name            | Variable Description                                                           |
+|--------------------------+--------------------------------------------------------------------------------|
+| =jcazevedo/config-dir=   | The directory where the initialization file is.                                |
+| =jcazevedo/elpa-dir=     | The directory where packages installed from elpa go to.                        |
+| =jcazevedo/savefile-dir= | The directory where all automatically generated save/history files are stored. |
 
 ** Packages
 
@@ -383,6 +385,19 @@ programming sessions.\\
   (setq uniquify-separator "/")
   (setq uniquify-after-kill-buffer-p t)
   (setq uniquify-ignore-buffers-re "^\\*")
+#+END_SRC
+
+   Saveplace remembers your location in a file when saving files. It is
+   activated for all buffers.
+
+#+BEGIN_SRC emacs-lisp
+  (require 'saveplace)
+
+  (unless (file-exists-p jcazevedo/savefile-dir)
+    (make-directory jcazevedo/savefile-dir))
+
+  (setq save-place-file (expand-file-name "saveplace" jcazevedo/savefile-dir))
+  (setq-default save-place t)
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
