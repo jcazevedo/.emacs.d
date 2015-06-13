@@ -504,6 +504,14 @@ programming sessions.\\
   (jcazevedo/require-packages '(fill-column-indicator))
 #+END_SRC
 
+   =volatile-highlights= bring visual feedback to some operations by
+   highlighting the portions related to them.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(volatile-highlights))
+  (require 'volatile-highlights)
+  (volatile-highlights-mode t)
+#+END_SRC
 ** Version Control
 
 #+BEGIN_SRC emacs-lisp
