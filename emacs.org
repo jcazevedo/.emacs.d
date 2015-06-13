@@ -415,7 +415,9 @@ programming sessions.\\
 
    Recentf saves recent files. A maximum number of 500 items are saved. The
    cleanup of recent files at startup is disabled due to potential issues with
-   remote files.
+   remote files. Files from the savefile dir and the package user dir are
+   excluded from the recent files, as well as the commit message files from
+   Magit.
 
 #+BEGIN_SRC emacs-lisp
   (require 'recentf)
@@ -424,6 +426,58 @@ programming sessions.\\
   (setq recentf-max-saved-items 500)
   (setq recentf-max-menu-items 15)
   (setq recentf-auto-cleanup 'never)
+
+  (defun jcazevedo/recentf-exclude-p (file)
+    (let ((file-dir (file-truename (file-name-directory file))))
+      (-any-p (lambda (dir)
+                (string-prefix-p dir file-dir))
+              (mapcar 'file-truename (list jcazevedo/savefile-dir package-user-dir)))))
+
+  (add-to-list 'recentf-exclude 'jcazevedo/recentf-exclude-p)
+  (add-to-list 'recentf-exclude "COMMIT_EDITMSG\\'")
+
+  (recentf-mode +1)
+#+END_SRC
+
+   I usually use @@html:<kbd>@@C-x o@@html:</kbd>@@ to switch buffers. However,
+   windmove sometimes comes in handy, allowing the usage of shift + arrow keys
+   to switch between visible buffers.
+
+#+BEGIN_SRC emacs-lisp
+  (require 'windmove)
+  (windmove-default-keybindings)
+#+END_SRC
+
+   Automatically save buffers which have files associated with them on buffer
+   and window switch. This idea was borrowed from Bozhidar Batsov's [[https://github.com/bbatsov/prelude][prelude]].
+
+#+BEGIN_SRC emacs-lisp
+  (defun jcazevedo/auto-save-command ()
+    (when (and buffer-file-name
+               (buffer-modified-p (current-buffer))
+               (file-writable-p buffer-file-name))
+      (save-buffer)))
+
+  (defmacro advise-commands (advice-name commands class &rest body)
+    `(progn
+       ,@(mapcar
+          (lambda (command)
+            `(defadvice ,command
+                 (,class ,(intern (concat (symbol-name command) "-" advice-name)) activate)
+               ,@body))
+          commands)))
+
+  (advise-commands "auto-save"
+                   (switch-to-buffer
+                    other-window
+                    windmove-up
+                    windmove-down
+                    windmove-left
+                    windmove-right)
+                   before
+                   (jcazevedo/auto-save-command))
+
+  (add-hook 'mouse-leave-buffer-hook 'jcazevedo/auto-save-command)
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
