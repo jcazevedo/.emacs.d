@@ -527,6 +527,7 @@ programming sessions.\\
    configuration, along with their description.
 
 | Key Binding                        | Description                                                                                                        |
+| @@html:<kbd>@@f11@@html:</kbd>@@   | Toggles fullscreen.                                                                                                |
 | @@html:<kbd>@@C-c r@@html:</kbd>@@ | Renames the current buffer and, if the buffer is visiting a file, rename the file as well.                         |
 | @@html:<kbd>@@C-c D@@html:</kbd>@@ | Kills the current buffer and deletes the file it is visiting.                                                      |
 | @@html:<kbd>@@C-x g@@html:</kbd>@@ | Opens a Magit status buffer for the Git repository contaning the file or directory the current buffer is visiting. |
