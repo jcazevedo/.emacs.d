@@ -480,6 +480,10 @@ programming sessions.\\
   (add-hook 'mouse-leave-buffer-hook 'jcazevedo/auto-save-command)
 #+END_SRC
 
+   Add method to enable =whitespace-mode= and add a hook for cleaning up
+   whitespace on buffer save. The default column width for =whitespace-mode= is
+   set at 80. Tabs, empty lines and trailing blanks are highlighted.
+
 #+BEGIN_SRC emacs-lisp
   (defun jcazevedo/enable-whitespace ()
     (add-hook 'before-save-hook 'whitespace-cleanup)
@@ -487,9 +491,16 @@ programming sessions.\\
 
   (require 'whitespace)
   (setq whitespace-line-column 80)
-  (setq-default fill-column 80)
   (setq whitespace-style '(face tabs empty trailing))
+#+END_SRC
 
+   Set the default column beyond which automatic line-wrapping should happen
+   at 80. Also require the =fill-column-indicator= package, enabling a graphical
+   indication through a thin line at the fill column. The mode can be enabled
+   through the =fci-mode= command.
+
+#+BEGIN_SRC emacs-lisp
+  (setq-default fill-column 80)
   (jcazevedo/require-packages '(fill-column-indicator))
 #+END_SRC
 
