@@ -400,6 +400,19 @@ programming sessions.\\
   (setq-default save-place t)
 #+END_SRC
 
+   Savehist keeps track of the minibuffer history by default. It is also enabled
+   for search entries.
+
+#+BEGIN_SRC emacs-lisp
+  (require 'savehist)
+
+  (setq savehist-additional-variables '(search-ring regexp-search-ring))
+  (setq savehist-autosave-interval 60)
+  (setq savehist-file (expand-file-name "savehist" jcazevedo/savefile-dir))
+
+  (savehist-mode +1)
+#+END_SRC
+
 #+BEGIN_SRC emacs-lisp
   (defun jcazevedo/enable-whitespace ()
     (add-hook 'before-save-hook 'whitespace-cleanup)
