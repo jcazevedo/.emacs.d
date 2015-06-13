@@ -362,9 +362,20 @@ programming sessions.\\
   (setq tab-always-indent 'complete)
 #+END_SRC
 
+   Enable =global-hl-line-mode= globally, highlighting the line the cursor is
+   at.
+
 #+BEGIN_SRC emacs-lisp
   (global-hl-line-mode +1)
 #+END_SRC
+
+   Uniquify override Emacs' default mechanism for making buffer names unique
+   (using numbered suffixes) with a behaviour which uses parts of the file names
+   to make the buffer names distinguishable. The =forward= style uses path
+   elements in their natural order, using =/= as a separator. Setting
+   =uniquify-after-kill-buffer-p= to non-nil rerationalizes the buffer names
+   after a buffer has been killed. Buffer names starting with =*= should not be
+   uniquified.
 
 #+BEGIN_SRC emacs-lisp
   (require 'uniquify)
