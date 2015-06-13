@@ -2,5 +2,7 @@
 *~
 .DS_Store
 elpa
+emacs.el
+projectile-bookmarks.eld
 savefile
 tramp
