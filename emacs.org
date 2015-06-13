@@ -21,6 +21,7 @@
      - [[#packages][Packages]]
      - [[#ui][UI]]
      - [[#editor][Editor]]
+         - [[#projects][Projects]]
      - [[#version-control][Version Control]]
      - [[#global-key-bindings][Global Key Bindings]]
      - [[#text][Text]]
@@ -512,6 +513,23 @@ programming sessions.\\
   (require 'volatile-highlights)
   (volatile-highlights-mode t)
 #+END_SRC
+
+*** Projects
+
+    In order to have the notion of a project inside Emacs, I use [[https://github.com/bbatsov/projectile][projectile]]. It
+    allows one to efficiently navigate through files in a project. A project is
+    a folder under version control by =git=, =mercurial=, =darcs= or
+    =bazaar=. Projects managed by =lein=, =maven=, =sbt=, =scons=, =rebar= or
+    =bundler= are also considered. A folder with a =.projectile= file in it is
+    also interpreted as a project. Projectile is enabled everywhere.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(projectile))
+  (require 'projectile)
+  (setq projectile-cache-file (expand-file-name  "projectile.cache" jcazevedo/savefile-dir))
+  (projectile-global-mode t)
+#+END_SRC
+
 ** Version Control
 
 #+BEGIN_SRC emacs-lisp
