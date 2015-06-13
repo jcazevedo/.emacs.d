@@ -355,6 +355,13 @@ programming sessions.\\
   (global-auto-revert-mode t)
 #+END_SRC
 
+   If a line is already indented, setting the value of =tab-always-indent= to
+   =complete= makes the =TAB= command try to complete the text at point.
+
+#+BEGIN_SRC emacs-lisp
+  (setq tab-always-indent 'complete)
+#+END_SRC
+
 #+BEGIN_SRC emacs-lisp
   (global-hl-line-mode +1)
 #+END_SRC
