@@ -622,6 +622,12 @@ programming sessions.\\
   (setq helm-ff-file-name-history-use-recentf t)
 #+END_SRC
 
+    Prevent the cursor from escaping the minibuffer.
+
+#+BEGIN_SRC emacs-lisp
+  (setq helm-prevent-escaping-from-minibuffer t)
+#+END_SRC
+
     Use the Helm frontend for describing bindings and the Helm interface to
     =ag=.
 
