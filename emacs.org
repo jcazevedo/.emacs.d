@@ -26,6 +26,7 @@
      - [[#version-control][Version Control]]
      - [[#text][Text]]
          - [[#org][Org]]
+     - [[#programming][Programming]]
      - [[#global-key-bindings][Global Key Bindings]]
 
 ** Core
@@ -792,6 +793,24 @@ programming sessions.\\
   (setq org-drawers (quote ("PROPERTIES" "LOGBOOK")))
   (setq org-clock-in-resume t)
   (setq org-clock-into-drawer t)
+#+END_SRC
+
+** Programming
+
+   This section relates to modes inheriting from =prog-mode=, and that
+   consequently call =prog-mode-hook= prior to their own hooks.
+
+   Enable =fci-mode= for programming modes, showing a line at the =fill-column=
+   column.
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'prog-mode-hook 'fci-mode)
+#+END_SRC
+
+   Enable =whitespace-mode= for programming modes.
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'prog-mode-hook 'jcazevedo/enable-whitespace)
 #+END_SRC
 
 ** Global Key Bindings
