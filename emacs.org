@@ -573,10 +573,22 @@ programming sessions.\\
 
 ** Version Control
 
+   I use Git almost exclusively as a version control software. =magit= is a
+   great mode to interact with Git. @@html:<kbd>@@C-x g@@html:</kbd>@@ opens a
+   magit status buffer for the current project, from which you can operate on
+   the repository.
+
 #+BEGIN_SRC emacs-lisp
   (jcazevedo/require-packages '(magit))
+#+END_SRC
+
+   Before running Git, Magit by default reverts all unmodified buffers that
+   visit files tracked in the current repository. Since version =1.4.0= a
+   warning is displayed regarding this. I'm OK with the current behaviour, so
+   the following disables repeated displays of the warning.
+
+#+BEGIN_SRC emacs-lisp
   (setq magit-last-seen-setup-instructions "1.4.0")
-  (global-set-key (kbd "C-x g") 'magit-status)
 #+END_SRC
 
 ** Global Key Bindings
