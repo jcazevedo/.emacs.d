@@ -606,6 +606,16 @@ programming sessions.\\
   (jcazevedo/require-packages '(gitattributes-mode gitconfig-mode gitignore-mode))
 #+END_SRC
 
+   =diff-hl-mode= highlights uncommited changes on the left side of the
+   window. The following enables it globally and loads the =diff-hl-dired-mode=
+   on =dired=.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(diff-hl))
+  (global-diff-hl-mode +1)
+  (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
+#+END_SRC
+
 ** Global Key Bindings
 
    The following defines extra global key bindings.
