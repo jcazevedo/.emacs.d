@@ -604,12 +604,6 @@ programming sessions.\\
   (setq helm-recentf-fuzzy-match t)
 #+END_SRC
 
-    Move to end or beginning of source when reaching top or bottom of source.
-
-#+BEGIN_SRC emacs-lisp
-  (setq helm-move-to-line-cycle-in-source t)
-#+END_SRC
-
     Search for library in =require= and =declare-function= sexp.
 
 #+BEGIN_SRC emacs-lisp
