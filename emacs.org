@@ -23,9 +23,9 @@
      - [[#editor][Editor]]
          - [[#projects][Projects]]
      - [[#version-control][Version Control]]
-     - [[#global-key-bindings][Global Key Bindings]]
      - [[#text][Text]]
          - [[#org][Org]]
+     - [[#global-key-bindings][Global Key Bindings]]
 
 ** Core
 
@@ -616,32 +616,6 @@ programming sessions.\\
   (add-hook 'dired-mode-hook 'diff-hl-dired-mode)
 #+END_SRC
 
-** Global Key Bindings
-
-   The following defines extra global key bindings.
-
-#+BEGIN_SRC emacs-lisp
-  (global-set-key (kbd "<f11>") 'jcazevedo/fullscreen)
-  (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
-  (global-set-key (kbd "C-c D") 'jcazevedo/delete-file-and-buffer)
-  (global-set-key (kbd "C-c r") 'jcazevedo/rename-buffer-and-file)
-  (global-set-key (kbd "C-h C-m") 'discover-my-major)
-  (global-set-key (kbd "C-x g") 'magit-status)
-  (global-set-key (kbd "M-%") 'anzu-query-replace)
-#+END_SRC
-
-   The following table lists all relevant global key bindings when using this
-   configuration, along with their description.
-
-| Key Binding                          | Description                                                                                                        |
-| @@html:<kbd>@@C-M-%@@html:</kbd>@@   | Queries and replace using a regexp in anzu.                                                                        |
-| @@html:<kbd>@@C-c D@@html:</kbd>@@   | Kills the current buffer and deletes the file it is visiting.                                                      |
-| @@html:<kbd>@@C-c r@@html:</kbd>@@   | Renames the current buffer and, if the buffer is visiting a file, rename the file as well.                         |
-| @@html:<kbd>@@C-h C-m@@html:</kbd>@@ | Displays list of keybindings and their meaning for the current major mode.                                         |
-| @@html:<kbd>@@C-x g@@html:</kbd>@@   | Opens a Magit status buffer for the Git repository contaning the file or directory the current buffer is visiting. |
-| @@html:<kbd>@@M-%@@html:</kbd>@@     | Queries and replace in anzu.                                                                                       |
-| @@html:<kbd>@@f11@@html:</kbd>@@     | Toggles fullscreen.                                                                                                |
-
 ** Text
 
    Text mode is a major mode for editing files of text in a human language. This
@@ -683,3 +657,29 @@ programming sessions.\\
 (require 'toc-org)
 (add-hook 'org-mode-hook 'toc-org-enable)
 #+END_SRC
+
+** Global Key Bindings
+
+   The following defines extra global key bindings.
+
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "<f11>") 'jcazevedo/fullscreen)
+  (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
+  (global-set-key (kbd "C-c D") 'jcazevedo/delete-file-and-buffer)
+  (global-set-key (kbd "C-c r") 'jcazevedo/rename-buffer-and-file)
+  (global-set-key (kbd "C-h C-m") 'discover-my-major)
+  (global-set-key (kbd "C-x g") 'magit-status)
+  (global-set-key (kbd "M-%") 'anzu-query-replace)
+#+END_SRC
+
+   The following table lists all relevant global key bindings when using this
+   configuration, along with their description.
+
+| Key Binding                          | Description                                                                                                        |
+| @@html:<kbd>@@C-M-%@@html:</kbd>@@   | Queries and replace using a regexp in anzu.                                                                        |
+| @@html:<kbd>@@C-c D@@html:</kbd>@@   | Kills the current buffer and deletes the file it is visiting.                                                      |
+| @@html:<kbd>@@C-c r@@html:</kbd>@@   | Renames the current buffer and, if the buffer is visiting a file, rename the file as well.                         |
+| @@html:<kbd>@@C-h C-m@@html:</kbd>@@ | Displays list of keybindings and their meaning for the current major mode.                                         |
+| @@html:<kbd>@@C-x g@@html:</kbd>@@   | Opens a Magit status buffer for the Git repository contaning the file or directory the current buffer is visiting. |
+| @@html:<kbd>@@M-%@@html:</kbd>@@     | Queries and replace in anzu.                                                                                       |
+| @@html:<kbd>@@f11@@html:</kbd>@@     | Toggles fullscreen.                                                                                                |
