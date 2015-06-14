@@ -487,6 +487,7 @@ programming sessions.\\
                    (jcazevedo/auto-save-command))
 
   (add-hook 'mouse-leave-buffer-hook 'jcazevedo/auto-save-command)
+  (add-hook 'focus-out-hook 'jcazevedo/auto-save-command)
 #+END_SRC
 
    Add method to enable =whitespace-mode= and add a hook for cleaning up
