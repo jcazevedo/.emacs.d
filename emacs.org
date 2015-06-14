@@ -558,6 +558,24 @@ programming sessions.\\
   (jcazevedo/require-packages '(discover-my-major))
 #+END_SRC
 
+   Enable =smartparens=. Smartparens is a minor mode for Emacs that deals with
+   parens pairs and tries to be smart about it. I find it most useful for
+   highlighting the correspondent opening/closing pairs, as well as navigating
+   between them (@@html:<kbd>@@C-M-f@@html:</kbd>@@ and
+   @@html:<kbd>@@C-M-b@@html:</kbd>@@).
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(smartparens))
+
+  (require 'smartparens-config)
+  (setq sp-base-key-bindings 'paredit)
+  (setq sp-autoskip-closing-pair 'always)
+  (setq sp-hybrid-kill-entire-symbol nil)
+  (sp-use-paredit-bindings)
+
+  (show-smartparens-global-mode +1)
+#+END_SRC
+
 *** Projects
 
     In order to have the notion of a project inside Emacs, I use [[https://github.com/bbatsov/projectile][projectile]]. It
