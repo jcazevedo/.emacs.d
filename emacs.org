@@ -666,6 +666,8 @@ programming sessions.\\
   (global-set-key (kbd "<f11>") 'jcazevedo/fullscreen)
   (global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
   (global-set-key (kbd "C-c D") 'jcazevedo/delete-file-and-buffer)
+  (global-set-key (kbd "C-c a") 'org-agenda)
+  (global-set-key (kbd "C-c b") 'org-iswitchb)
   (global-set-key (kbd "C-c r") 'jcazevedo/rename-buffer-and-file)
   (global-set-key (kbd "C-h C-m") 'discover-my-major)
   (global-set-key (kbd "C-x g") 'magit-status)
@@ -683,3 +685,5 @@ programming sessions.\\
 | @@html:<kbd>@@C-x g@@html:</kbd>@@   | Opens a Magit status buffer for the Git repository contaning the file or directory the current buffer is visiting. |
 | @@html:<kbd>@@M-%@@html:</kbd>@@     | Queries and replace in anzu.                                                                                       |
 | @@html:<kbd>@@f11@@html:</kbd>@@     | Toggles fullscreen.                                                                                                |
+| @@html:<kbd>@@C-c a@@html:</kbd>@@   | Shows org agenda.                                                                                                  |
+| @@html:<kbd>@@C-c b@@html:</kbd>@@   | Switchs between org files                                                                                          |
