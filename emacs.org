@@ -532,6 +532,14 @@ programming sessions.\\
             'executable-make-buffer-file-executable-if-script-p)
 #+END_SRC
 
+   Enable =winner-mode=. It allows you to undo and redo changes in window
+   configuration with the key commands @@html:<kbd>@@C-c left@@html:</kbd>@@ and
+   @@html:<kbd>@@C-c right@@html:</kbd>@@.
+
+#+BEGIN_SRC emacs-lisp
+  (winner-mode +1)
+#+END_SRC
+
 *** Projects
 
     In order to have the notion of a project inside Emacs, I use [[https://github.com/bbatsov/projectile][projectile]]. It
