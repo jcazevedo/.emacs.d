@@ -591,6 +591,12 @@ programming sessions.\\
   (helm-autoresize-mode 1)
 #+END_SRC
 
+    Open Helm buffer inside current window.
+
+#+BEGIN_SRC emacs-lisp
+  (setq helm-split-window-in-side-p t)
+#+END_SRC
+
     Enable fuzzy matching.
 
 #+BEGIN_SRC emacs-lisp
