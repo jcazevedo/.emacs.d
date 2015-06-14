@@ -591,6 +591,21 @@ programming sessions.\\
   (setq magit-last-seen-setup-instructions "1.4.0")
 #+END_SRC
 
+   =git-timemachine= allows one to navigate through the history of a
+   git-controlled file. I don't have it bound to a specific keybinding, so a
+   call to @@html:<kbd>@@M-x git-timemachine@@html:</kbd>@@ enables it.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(git-timemachine))
+#+END_SRC
+
+   The following enables Emacs major modes for various Git configuration files,
+   such as =.gitattributes=, =.gitconfig= and =.gitignore=.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(gitattributes-mode gitconfig-mode gitignore-mode))
+#+END_SRC
+
 ** Global Key Bindings
 
    The following defines extra global key bindings.
