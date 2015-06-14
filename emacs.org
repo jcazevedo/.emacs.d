@@ -335,7 +335,7 @@ programming sessions.\\
   (setq-default tab-width 8)
 #+END_SRC
 
-   Require a newline at the end of a file
+   Require a newline at the end of a file.
 
 #+BEGIN_SRC emacs-lisp
   (setq require-final-newline t)
