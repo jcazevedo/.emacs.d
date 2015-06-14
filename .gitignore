@@ -3,6 +3,7 @@
 .DS_Store
 elpa
 emacs.el
+ensime
 projectile-bookmarks.eld
 savefile
 tramp

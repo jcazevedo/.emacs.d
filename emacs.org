@@ -27,6 +27,7 @@
      - [[#text][Text]]
          - [[#org][Org]]
      - [[#programming][Programming]]
+         - [[#scala][Scala]]
      - [[#global-key-bindings][Global Key Bindings]]
 
 ** Core
@@ -829,6 +830,18 @@ programming sessions.\\
 
 #+BEGIN_SRC emacs-lisp
   (add-hook 'prog-mode-hook 'jcazevedo/enable-whitespace)
+#+END_SRC
+
+*** Scala
+
+    The following defines the settings to deal with Scala buffers. I rely on
+    =scala-mode2= and =ensime= for all Scala projects.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(scala-mode2 ensime))
+
+  (require 'ensime)
+  (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 #+END_SRC
 
 ** Global Key Bindings
