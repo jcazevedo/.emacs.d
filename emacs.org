@@ -669,6 +669,14 @@ programming sessions.\\
 
 *** Org
 
+    Org mode is for keeping notes, maintaining TODO lists, planning projects,
+    and authoring documents with a fast and effective plain-text system. I also
+    Org mode to maintain this initialization file.
+
+    =toc-org= enables automatic generation of a table of contents inside a
+    section containing the =:TOC:= tag. I use it mainly to have a neat table of
+    contents in this file when visiting it through [[https://github.com/jcazevedo/emacs.d/blob/master/emacs.org][GitHub]].
+
 #+BEGIN_SRC emacs-lisp
 (jcazevedo/require-packages '(toc-org))
 
