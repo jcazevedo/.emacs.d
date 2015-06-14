@@ -600,10 +600,10 @@ programming sessions.\\
 | @@html:<kbd>@@C-M-%@@html:</kbd>@@   | Queries and replace using a regexp in anzu.                                                                        |
 | @@html:<kbd>@@C-c D@@html:</kbd>@@   | Kills the current buffer and deletes the file it is visiting.                                                      |
 | @@html:<kbd>@@C-c r@@html:</kbd>@@   | Renames the current buffer and, if the buffer is visiting a file, rename the file as well.                         |
+| @@html:<kbd>@@C-h C-m@@html:</kbd>@@ | Displays list of keybindings and their meaning for the current major mode.                                         |
 | @@html:<kbd>@@C-x g@@html:</kbd>@@   | Opens a Magit status buffer for the Git repository contaning the file or directory the current buffer is visiting. |
 | @@html:<kbd>@@M-%@@html:</kbd>@@     | Queries and replace in anzu.                                                                                       |
 | @@html:<kbd>@@f11@@html:</kbd>@@     | Toggles fullscreen.                                                                                                |
-| @@html:<kbd>@@C-h C-m@@html:</kbd>@@ | Displays list of keybindings and their meaning for the current major mode.                                         |
 
 ** Text
 
