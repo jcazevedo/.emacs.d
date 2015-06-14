@@ -22,6 +22,7 @@
      - [[#ui][UI]]
      - [[#editor][Editor]]
          - [[#projects][Projects]]
+         - [[#selection][Selection]]
      - [[#version-control][Version Control]]
      - [[#text][Text]]
          - [[#org][Org]]
@@ -570,6 +571,93 @@ programming sessions.\\
   (require 'projectile)
   (setq projectile-cache-file (expand-file-name  "projectile.cache" jcazevedo/savefile-dir))
   (projectile-global-mode t)
+#+END_SRC
+
+*** Selection
+
+    Use Helm as an incremental completion and selection narrowing framework for
+    Emacs.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(helm helm-projectile))
+
+  (require 'helm-config)
+  (require 'helm-projectile)
+#+END_SRC
+
+    Make Helm auto-resizable according to the number of candidates.
+
+#+BEGIN_SRC emacs-lisp
+  (helm-autoresize-mode 1)
+#+END_SRC
+
+    Enable fuzzy matching.
+
+#+BEGIN_SRC emacs-lisp
+  (setq helm-buffers-fuzzy-matching t)
+  (setq helm-recentf-fuzzy-match t)
+#+END_SRC
+
+    Move to end or beginning of source when reaching top or bottom of source.
+
+#+BEGIN_SRC emacs-lisp
+  (setq helm-move-to-line-cycle-in-source t)
+#+END_SRC
+
+    Search for library in =require= and =declare-function= sexp.
+
+#+BEGIN_SRC emacs-lisp
+  (setq helm-ff-search-library-in-sexp t)
+#+END_SRC
+
+    Use recentf for file name history.
+
+#+BEGIN_SRC emacs-lisp
+  (setq helm-ff-file-name-history-use-recentf t)
+#+END_SRC
+
+    Use the Helm frontend for describing bindings and the Helm interface to
+    =ag=.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(helm-descbinds helm-ag))
+#+END_SRC
+
+    Replace some global key bindings to use Helm instead.
+
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "M-x") 'helm-M-x)
+  (global-set-key (kbd "C-x C-m") 'helm-M-x)
+  (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+  (global-set-key (kbd "C-x b") 'helm-mini)
+  (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+  (global-set-key (kbd "C-x C-f") 'helm-find-files)
+  (global-set-key (kbd "C-h f") 'helm-apropos)
+  (global-set-key (kbd "C-h r") 'helm-info-emacs)
+  (global-set-key (kbd "C-h C-l") 'helm-locate-library)
+  (global-set-key (kbd "C-c f") 'helm-recentf)
+
+  (define-key minibuffer-local-map (kbd "C-c C-l") 'helm-minibuffer-history)
+#+END_SRC
+
+    Preconfigure Helm for etags.
+
+#+BEGIN_SRC emacs-lisp
+  (substitute-key-definition 'find-tag 'helm-etags-select global-map)
+#+END_SRC
+
+    Use Helm as projectile's completion system.
+
+#+BEGIN_SRC emacs-lisp
+  (setq projectile-completion-system 'helm)
+#+END_SRC
+
+    Effectively enable Helm everywhere.
+
+#+BEGIN_SRC emacs-lisp
+  (helm-descbinds-mode)
+  (helm-mode 1)
+  (helm-projectile-on)
 #+END_SRC
 
 ** Version Control
