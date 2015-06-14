@@ -263,6 +263,14 @@
   (size-indication-mode t)
 #+END_SRC
 
+   Hide the scrollbar. With =line-number-mode=, =column-number-mode= and
+   =size-indication-mode= we already have a good indication of where we are in a
+   buffer.
+
+#+BEGIN_SRC emacs-lisp
+  (scroll-bar-mode -1)
+#+END_SRC
+
    Enable y/n answers, since most commands require you to explicitly write =yes=
    or =no=, and that's cumbersome.
 
