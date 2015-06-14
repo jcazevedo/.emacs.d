@@ -517,6 +517,26 @@ programming sessions.\\
   (jcazevedo/require-packages '(fill-column-indicator))
 #+END_SRC
 
+   The =fill-column-indicator= doesn't play well with =company-mode=. In the
+   event of using =company-mode=, the following disables =fci-mode= temporarily
+   while a popup is being displayed.
+
+#+BEGIN_SRC emacs-lisp
+  (defvar-local company-fci-mode-on-p nil)
+
+  (defun company-turn-off-fci (&rest ignore)
+    (when (boundp 'fci-mode)
+      (setq company-fci-mode-on-p fci-mode)
+      (when fci-mode (fci-mode -1))))
+
+  (defun company-maybe-turn-on-fci (&rest ignore)
+    (when company-fci-mode-on-p (fci-mode 1)))
+
+  (add-hook 'company-completion-started-hook 'company-turn-off-fci)
+  (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
+  (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
+#+END_SRC
+
    =volatile-highlights= bring visual feedback to some operations by
    highlighting the portions related to them.
 
