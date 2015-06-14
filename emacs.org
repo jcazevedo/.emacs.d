@@ -26,6 +26,7 @@
      - [[#version-control][Version Control]]
      - [[#text][Text]]
          - [[#org][Org]]
+         - [[#markdown][Markdown]]
      - [[#programming][Programming]]
          - [[#scala][Scala]]
      - [[#global-key-bindings][Global Key Bindings]]
@@ -145,14 +146,11 @@
   (require 'package)
 #+END_SRC
 
-   Update the package archives to include the default package archive (=gnu=),
-   as well as =marmalde= and =melpa=.
+   Add =melpa= to the package archives.
 
 #+BEGIN_SRC emacs-lisp
-  (setq package-archives
-        '(("gnu" . "http://elpa.gnu.org/packages/")
-          ("marmalade" . "https://marmalade-repo.org/packages/")
-          ("melpa" . "http://melpa.org/packages/")))
+  (add-to-list 'package-archives
+               '("melpa" . "http://melpa.org/packages/") t)
 #+END_SRC
 
    Set the directory for the contents of packages downloaded from the Emacs Lisp
@@ -833,6 +831,10 @@ programming sessions.\\
   (setq org-clock-in-resume t)
   (setq org-clock-into-drawer t)
 #+END_SRC
+
+*** Markdown
+
+
 
 ** Programming
 
