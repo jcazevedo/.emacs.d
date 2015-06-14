@@ -644,8 +644,19 @@ programming sessions.\\
 
 ** Text
 
+   Text mode is a major mode for editing files of text in a human language. This
+   section relates to =text-mode= itself, as well as major modes that derive
+   from it, and consequently call =text-mode-hook= prior to their own hooks.
+
+   Enable =fci-mode= for text modes, showing a line at the =fill-column= column.
+
 #+BEGIN_SRC emacs-lisp
   (add-hook 'text-mode-hook 'fci-mode)
+#+END_SRC
+
+   Enable =whitespace-mode= for text modes.
+
+#+BEGIN_SRC emacs-lisp
   (add-hook 'text-mode-hook 'jcazevedo/enable-whitespace)
 #+END_SRC
 
