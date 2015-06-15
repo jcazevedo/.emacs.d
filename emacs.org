@@ -314,6 +314,16 @@ programming sessions.\\
       (error "Unable to toggle fullscreen")))
 #+END_SRC
 
+   Enable =smart-mode-line=, which is a sexy replacement for the default Emacs
+   mode-line.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(smart-mode-line))
+  (setq sml/no-confirm-load-theme t)
+  (setq sml/theme 'dark)
+  (sml/setup)
+#+END_SRC
+
 ** Editor
 
    The following options are related to the editor experience under Emacs.
