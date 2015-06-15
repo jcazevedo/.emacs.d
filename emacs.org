@@ -182,15 +182,14 @@
 #+END_SRC
 
    [[https://github.com/Malabarba/paradox/][Paradox]] modernizes Emacs' package menu, providing GitHub integration, better
-   mode-line information and asynchronous upgrading. The following sets the
-   =list-packages= command to use =paradox-list-packages= instead. No value is
-   set for =paradox-github-token=, since I don't want to star repositories from
-   the package list.
+   mode-line information and asynchronous upgrading. =paradox-list-packages=
+   uses the =list-packages= command, so I can't replace the latter directly. No
+   value is set for =paradox-github-token=, since I don't want to star
+   repositories from the package list.
 
 #+BEGIN_SRC emacs-lisp
   (jcazevedo/require-packages '(paradox))
   (setq paradox-github-token t)
-  (fset 'list-packages 'paradox-list-packages)
 #+END_SRC
 
 ** UI
