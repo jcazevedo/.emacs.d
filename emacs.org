@@ -1,7 +1,7 @@
 #+TITLE:  Joao Azevedo's Emacs Initialization File
 #+AUTHOR: Joao Azevedo
 #+EMAIL:  joao.c.azevedo@gmail.com
-#+DATE:   2015-06-14 Sun
+#+DATE:   2015-06-15 Mon
 
   This file is my Emacs initialization file. It's written in [[http://orgmode.org/][org-mode]] using
   [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it both
@@ -839,6 +839,13 @@ programming sessions.\\
   (setq org-drawers (quote ("PROPERTIES" "LOGBOOK")))
   (setq org-clock-in-resume t)
   (setq org-clock-into-drawer t)
+#+END_SRC
+
+    Log the timestamp a task entered the DONE state.
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-log-done (quote time))
+  (setq org-log-into-drawer t)
 #+END_SRC
 
 *** Markdown
