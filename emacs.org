@@ -29,6 +29,7 @@
          - [[#markdown][Markdown]]
      - [[#programming][Programming]]
          - [[#scala][Scala]]
+         - [[#yaml][YAML]]
      - [[#global-key-bindings][Global Key Bindings]]
 
 ** Core
@@ -888,6 +889,18 @@ programming sessions.\\
 
   (require 'ensime)
   (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+#+END_SRC
+
+*** YAML
+
+    YAML is a simple language that describes data. It doesn't inherit neither
+    from =prog-mode= nor =text-mode= so the =whitespace-mode= and =fci-mode=
+    hooks need to be set explicitly.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(yaml-mode))
+  (add-hook 'yaml-mode-hook 'fci-mode)
+  (add-hook 'yaml-mode-hook 'jcazevedo/enable-whitespace)
 #+END_SRC
 
 ** Global Key Bindings
