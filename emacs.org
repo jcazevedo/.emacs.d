@@ -833,7 +833,15 @@ programming sessions.\\
 
 *** Markdown
 
+    Markdown is a plain text formatting syntax, used widely as a documentation
+    format. The following sets =markdown-mode= up and enables it for =.md= and
+    =.markdown= files.
 
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(markdown-mode))
+  (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+#+END_SRC
 
 ** Programming
 
