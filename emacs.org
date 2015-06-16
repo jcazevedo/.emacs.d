@@ -893,7 +893,7 @@ programming sessions.\\
   (jcazevedo/require-packages '(web-mode))
 #+END_SRC
 
-    Associate a bunch o typical template engines with =web-mode=.
+    Associate a bunch of typical template engines with =web-mode=.
 
 #+BEGIN_SRC emacs-lisp
   (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
