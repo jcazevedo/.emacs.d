@@ -879,6 +879,15 @@ programming sessions.\\
   (add-hook 'prog-mode-hook 'jcazevedo/enable-whitespace)
 #+END_SRC
 
+*** PHP
+
+    The following defines the settings to deal with PHP buffers. I rely on
+    =php-mode= exclusively for that.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(php-mode))
+#+END_SRC
+
 *** Scala
 
     The following defines the settings to deal with Scala buffers. I rely on
