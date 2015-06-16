@@ -28,6 +28,8 @@
          - [[#markdown][Markdown]]
          - [[#org][Org]]
      - [[#programming][Programming]]
+         - [[#javascript][JavaScript]]
+         - [[#php][PHP]]
          - [[#scala][Scala]]
          - [[#yaml][YAML]]
      - [[#global-key-bindings][Global Key Bindings]]
@@ -877,6 +879,17 @@ programming sessions.\\
 
 #+BEGIN_SRC emacs-lisp
   (add-hook 'prog-mode-hook 'jcazevedo/enable-whitespace)
+#+END_SRC
+
+*** JavaScript
+
+    The following defines the settings to deal with JavaScript buffers. I
+    currently use =js2-mode= for that.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(js2-mode))
+  (require 'js2-mode)
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 #+END_SRC
 
 *** PHP
