@@ -29,6 +29,7 @@
          - [[#org][Org]]
      - [[#programming][Programming]]
          - [[#javascript][JavaScript]]
+         - [[#json][JSON]]
          - [[#php][PHP]]
          - [[#scala][Scala]]
          - [[#yaml][YAML]]
@@ -890,6 +891,14 @@ programming sessions.\\
   (jcazevedo/require-packages '(js2-mode))
   (require 'js2-mode)
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+#+END_SRC
+
+*** JSON
+
+    The following defines the settings to deal with JSON buffers.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(json-mode))
 #+END_SRC
 
 *** PHP
