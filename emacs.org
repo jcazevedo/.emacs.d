@@ -893,6 +893,13 @@ programming sessions.\\
   (jcazevedo/require-packages '(web-mode))
 #+END_SRC
 
+    Indent HTML and CSS with 2 spaces.
+
+#+BEGIN_SRC emacs-lisp
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+#+END_SRC
+
     Associate a bunch of typical template engines with =web-mode=.
 
 #+BEGIN_SRC emacs-lisp
