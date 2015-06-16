@@ -919,6 +919,13 @@ programming sessions.\\
   (setq web-mode-enable-auto-pairing nil)
 #+END_SRC
 
+    =web-mode= runs into some strange indentation issues with =fci-mode=
+    enabled, so this disables the latter in =web-mode=.
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'web-mode-hook 'turn-off-fci-mode)
+#+END_SRC
+
 *** JavaScript
 
     The following defines the settings to deal with JavaScript buffers. I
