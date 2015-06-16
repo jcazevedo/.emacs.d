@@ -28,6 +28,7 @@
          - [[#markdown][Markdown]]
          - [[#org][Org]]
      - [[#programming][Programming]]
+         - [[#html][HTML]]
          - [[#javascript][JavaScript]]
          - [[#json][JSON]]
          - [[#php][PHP]]
@@ -880,6 +881,42 @@ programming sessions.\\
 
 #+BEGIN_SRC emacs-lisp
   (add-hook 'prog-mode-hook 'jcazevedo/enable-whitespace)
+#+END_SRC
+
+*** HTML
+
+    I use =web-mode= to deal with HTML and other template files that generate
+    HTML. It allows better integration with CSS, JavaScript, and server-side
+    code blocks.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(web-mode))
+#+END_SRC
+
+    Associate a bunch o typical template engines with =web-mode=.
+
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+#+END_SRC
+
+    Take into account files inside folders that most likely have templates.
+
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'auto-mode-alist
+               '("/\\(views\\|html\\|theme\\|templates\\)/.*\\.php\\'" . web-mode))
+#+END_SRC
+
+    Make =web-mode= play nice with smartparens.
+
+#+BEGIN_SRC emacs-lisp
+  (setq web-mode-enable-auto-pairing nil)
 #+END_SRC
 
 *** JavaScript
