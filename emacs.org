@@ -1,7 +1,7 @@
 #+TITLE:  Joao Azevedo's Emacs Initialization File
 #+AUTHOR: Joao Azevedo
 #+EMAIL:  joao.c.azevedo@gmail.com
-#+DATE:   2015-06-15 Mon
+#+DATE:   2015-06-23 Tue
 
   This file is my Emacs initialization file. It's written in [[http://orgmode.org/][org-mode]] using
   [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it both
@@ -971,6 +971,19 @@ programming sessions.\\
 
   (require 'ensime)
   (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+#+END_SRC
+
+    By default, =scala-mode='s =fill-paragraph= function doesn't fill ScalaDoc
+    parameter lists properly. I changed this to use the same function as
+    =java-mode=, and the same values for =paragraph-separate= and
+    =paragraph-start=.
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'scala-mode-hook (lambda ()
+                               (setq scala-indent:use-javadoc-style t)
+                               (setq paragraph-separate "[ \t]*\\(//+\\|\\*?\\)[ \t]*$\\|^")
+                               (setq paragraph-start "[ \t]*\\(//+\\|\\*?\\)[ \t]*\\(@[a-zA-Z]+\\>\\|$\\)\\|^\f")
+                               (setq fill-paragraph-function 'c-fill-paragraph)))
 #+END_SRC
 
 *** YAML
