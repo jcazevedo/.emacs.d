@@ -976,7 +976,7 @@ programming sessions.\\
     By default, =scala-mode='s =fill-paragraph= function doesn't fill ScalaDoc
     parameter lists properly. I changed this to use the same function as
     =java-mode=, and the same values for =paragraph-separate= and
-    =paragraph-start=.
+    =paragraph-start= as =java-mode=.
 
 #+BEGIN_SRC emacs-lisp
   (add-hook 'scala-mode-hook (lambda ()
