@@ -898,8 +898,14 @@ programming sessions.\\
 
 *** C++
 
-    I'm currently happy with the defaults Emacs provides me for C++ file
-    editing, so there's no additional configuration.
+    When editing C++ source files, I'm mostly happy with the defaults. The only
+    thing I like different is the default indentation offset, which I prefer to
+    be at 4.
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'c-mode-common-hook (lambda ()
+                                  (setq c-basic-offset 4)))
+#+END_SRC
 
 *** HTML
 
