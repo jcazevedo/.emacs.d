@@ -33,6 +33,7 @@
          - [[#html][HTML]]
          - [[#javascript][JavaScript]]
          - [[#json][JSON]]
+         - [[#makefile][Makefile]]
          - [[#php][PHP]]
          - [[#scala][Scala]]
          - [[#yaml][YAML]]
@@ -967,6 +968,16 @@ programming sessions.\\
 
 #+BEGIN_SRC emacs-lisp
   (jcazevedo/require-packages '(json-mode))
+#+END_SRC
+
+*** Makefile
+
+    When editing Makefiles, allow usage of tabs.
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'makefile-mode-hook (lambda ()
+                                  (whitespace-toggle-options '(tabs))
+                                  (setq indent-tabs-mode t)))
 #+END_SRC
 
 *** PHP
