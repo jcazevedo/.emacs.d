@@ -1,7 +1,7 @@
 #+TITLE:  Joao Azevedo's Emacs Initialization File
 #+AUTHOR: Joao Azevedo
 #+EMAIL:  joao.c.azevedo@gmail.com
-#+DATE:   2015-06-23 Tue
+#+DATE:   2015-06-24 Wed
 
   This file is my Emacs initialization file. It's written in [[http://orgmode.org/][org-mode]] using
   [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it both
@@ -25,6 +25,7 @@
          - [[#selection][Selection]]
      - [[#version-control][Version Control]]
      - [[#text][Text]]
+         - [[#latex][LaTeX]]
          - [[#markdown][Markdown]]
          - [[#org][Org]]
      - [[#programming][Programming]]
@@ -786,6 +787,16 @@ programming sessions.\\
 #+BEGIN_SRC emacs-lisp
   (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
   (setq visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow))
+#+END_SRC
+
+*** LaTeX
+
+    LaTeX is a word processor and document markup language. The following
+    enables AUCTeX, which supports visualizing selected source chunks directly
+    in the source buffer.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(auctex))
 #+END_SRC
 
 *** Markdown
