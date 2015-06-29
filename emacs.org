@@ -35,6 +35,7 @@
          - [[#json][JSON]]
          - [[#makefile][Makefile]]
          - [[#php][PHP]]
+         - [[#r][R]]
          - [[#scala][Scala]]
          - [[#yaml][YAML]]
      - [[#global-key-bindings][Global Key Bindings]]
@@ -993,6 +994,15 @@ programming sessions.\\
 
 #+BEGIN_SRC emacs-lisp
   (jcazevedo/require-packages '(php-mode))
+#+END_SRC
+
+*** R
+
+    The following requires and loads the =ess= package, which includes features
+    to deal with =R= files.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(ess))
 #+END_SRC
 
 *** Scala
