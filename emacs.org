@@ -1003,6 +1003,14 @@ programming sessions.\\
 
 #+BEGIN_SRC emacs-lisp
   (jcazevedo/require-packages '(ess))
+  (require 'ess-site)
+#+END_SRC
+
+    =ess= doesn't run the =prog-mode-hook= on start, so it is explicitly
+    enabled.
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'ess-mode-hook (lambda () (run-hooks 'prog-mode-hook)))
 #+END_SRC
 
 *** Scala
