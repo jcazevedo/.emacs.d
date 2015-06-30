@@ -4,6 +4,7 @@
 elpa
 emacs.el
 ensime
+org-clock-save.el
 projectile-bookmarks.eld
 savefile
 tramp
