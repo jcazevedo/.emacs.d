@@ -845,6 +845,7 @@ programming sessions.\\
         (quote ((sequence
                  "TODO(t)"
                  "STARTED(s)"
+                 "ONGOING(o)"
                  "|"
                  "DONE(d)"
                  "CANCELLED(c)"
@@ -853,6 +854,7 @@ programming sessions.\\
   (setq org-todo-keyword-faces
         (quote (("TODO" :foreground "red" :weight bold)
                 ("STARTED" :foreground "dodger blue" :weight bold)
+                ("ONGOING" :foreground "dodger blue" :weight bold)
                 ("DONE" :foreground "forest green" :weight bold)
                 ("CANCELLED" :foreground "forest green" :weight bold)
                 ("MEETING" :foreground "forest green" :weight bold))))
@@ -864,6 +866,24 @@ programming sessions.\\
   (setq org-use-fast-todo-selection t)
 #+END_SRC
 
+    Don't treat =S-cursor= as state change.
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-treat-S-cursor-todo-selection-as-state-change nil)
+#+END_SRC
+
+    Don't log the done timestamp.
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-log-done nil)
+#+END_SRC
+
+    Don't clock out when done.
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-clock-out-when-done nil)
+#+END_SRC
+
     Define drawers for TODO list items.
 
 #+BEGIN_SRC emacs-lisp
@@ -872,11 +892,31 @@ programming sessions.\\
   (setq org-clock-into-drawer t)
 #+END_SRC
 
-    Log the timestamp a task entered the DONE state.
+    Persist clocks and save the clock history across Emacs sessions.
 
 #+BEGIN_SRC emacs-lisp
-  (setq org-log-done (quote time))
-  (setq org-log-into-drawer t)
+  (setq org-clock-persist t)
+  (setq org-clock-persist-query-resume nil)
+  (setq org-clock-auto-clock-resolution (quote when-no-clock-is-running))
+  (org-clock-persistence-insinuate)
+#+END_SRC
+
+    Modify the clock report table to better accommodate stuff.
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-clock-report-include-clocking-task t)
+  (setq org-agenda-clockreport-parameter-plist
+        (quote (:link t :maxlevel 5 :fileskip0 t :compact t :narrow 80)))
+#+END_SRC
+
+    Modify the agenda prefix to allow larger filenames.
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-agenda-prefix-format (quote ((agenda . " %i %-15:c%?-12t% s")
+                                         (timeline . "  % s")
+                                         (todo . " %i %-12:c")
+                                         (tags . " %i %-12:c")
+                                         (search . " %i %-12:c"))))
 #+END_SRC
 
 ** Programming
