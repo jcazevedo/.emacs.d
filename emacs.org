@@ -1,7 +1,7 @@
 #+TITLE:  Joao Azevedo's Emacs Initialization File
 #+AUTHOR: Joao Azevedo
 #+EMAIL:  joao.c.azevedo@gmail.com
-#+DATE:   2015-06-24 Wed
+#+DATE:   2015-07-06 Mon
 
   This file is my Emacs initialization file. It's written in [[http://orgmode.org/][org-mode]] using
   [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it both
@@ -946,6 +946,36 @@ programming sessions.\\
 #+BEGIN_SRC emacs-lisp
   (add-hook 'c++-mode-hook (lambda ()
                              (setq c-basic-offset 4)))
+#+END_SRC
+
+    I use a lot of C++ for algorithmic programming contests. I generally code my
+    solutions in a single file with a bunch of relevant includes on top. The
+    following function inserts all those includes at point.
+
+#+BEGIN_SRC emacs-lisp
+  (defun jcazevedo/contests-includes ()
+    (interactive)
+    (insert "#include <algorithm>
+  #include <iostream>
+  #include <iterator>
+  #include <numeric>
+  #include <sstream>
+  #include <fstream>
+  #include <cassert>
+  #include <climits>
+  #include <cstdlib>
+  #include <cstring>
+  #include <string>
+  #include <cstdio>
+  #include <vector>
+  #include <bitset>
+  #include <cmath>
+  #include <queue>
+  #include <deque>
+  #include <stack>
+  #include <list>
+  #include <map>
+  #include <set>"))
 #+END_SRC
 
 *** HTML
