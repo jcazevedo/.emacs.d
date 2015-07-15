@@ -918,6 +918,16 @@ programming sessions.\\
                                          (search . " %i %-12:c"))))
 #+END_SRC
 
+    The following adds LaTeX to the list of languages loaded by org-babel. By
+    default, only emacs-lisp is loaded.
+
+#+BEGIN_SRC emacs-lisp
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (latex . t)))
+#+END_SRC
+
 ** Programming
 
    This section relates to modes inheriting from =prog-mode=, and that
