@@ -946,6 +946,12 @@ programming sessions.\\
   (add-hook 'prog-mode-hook 'jcazevedo/enable-whitespace)
 #+END_SRC
 
+   Enable =smartparens= for programming modes.
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'prog-mode-hook (lambda () (smartparens-mode +1)))
+#+END_SRC
+
 *** C++
 
     When editing C++ source files, I'm mostly happy with the defaults. The only
