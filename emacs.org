@@ -328,7 +328,12 @@ programming sessions.\\
 #+BEGIN_SRC emacs-lisp
   (jcazevedo/require-packages '(smart-mode-line))
   (setq sml/no-confirm-load-theme t)
-  (setq sml/theme 'dark)
+#+END_SRC
+
+   Delegate =smart-mode-line= theming to the currently active theme.
+
+#+BEGIN_SRC emacs-lisp
+  (setq sml/theme nil)
   (sml/setup)
 #+END_SRC
 
