@@ -876,10 +876,10 @@ programming sessions.\\
   (setq org-treat-S-cursor-todo-selection-as-state-change nil)
 #+END_SRC
 
-    Don't log the done timestamp.
+    Log the done timestamp.
 
 #+BEGIN_SRC emacs-lisp
-  (setq org-log-done nil)
+  (setq org-log-done 'time)
 #+END_SRC
 
     Don't clock out when done.
