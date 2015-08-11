@@ -1059,6 +1059,13 @@ programming sessions.\\
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 #+END_SRC
 
+    Set the default indentation offset in JavaScript to 2 spaces.
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'js2-mode-hook (lambda ()
+                             (setq-default js2-basic-offset 2)))
+#+END_SRC
+
 *** JSON
 
     The following defines the settings to deal with JSON buffers.
