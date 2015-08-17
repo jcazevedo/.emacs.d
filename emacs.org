@@ -1,7 +1,7 @@
 #+TITLE:  Joao Azevedo's Emacs Initialization File
 #+AUTHOR: Joao Azevedo
 #+EMAIL:  joao.c.azevedo@gmail.com
-#+DATE:   2015-07-14 Tue
+#+DATE:   2015-08-17 Mon
 
 This file is my Emacs initialization file. It's written in [[http://orgmode.org/][org-mode]] using
 [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it both
@@ -15,31 +15,31 @@ Mitsuharu]], which I usually install and update using [[http://brew.sh/][Homebre
 The latest Emacs version that I've run this configuration with is =24.5.1=.
 
 ** Table of Contents                                                  :TOC_3:
-     - [[#core][Core]]
-         - [[#global-variables][Global Variables]]
-     - [[#packages][Packages]]
-     - [[#ui][UI]]
-     - [[#editor][Editor]]
-         - [[#projects][Projects]]
-         - [[#selection][Selection]]
-     - [[#version-control][Version Control]]
-     - [[#text][Text]]
-         - [[#latex][LaTeX]]
-         - [[#markdown][Markdown]]
-         - [[#org][Org]]
-     - [[#programming][Programming]]
-         - [[#c][C++]]
-         - [[#html][HTML]]
-         - [[#javascript][JavaScript]]
-         - [[#json][JSON]]
-         - [[#makefile][Makefile]]
-         - [[#php][PHP]]
-         - [[#r][R]]
-         - [[#scala][Scala]]
-         - [[#yaml][YAML]]
-     - [[#utilities][Utilities]]
-         - [[#restclient][Restclient]]
-     - [[#global-key-bindings][Global Key Bindings]]
+   - [[#core][Core]]
+     - [[#global-variables][Global Variables]]
+   - [[#packages][Packages]]
+   - [[#ui][UI]]
+   - [[#editor][Editor]]
+     - [[#projects][Projects]]
+     - [[#selection][Selection]]
+   - [[#version-control][Version Control]]
+   - [[#text][Text]]
+     - [[#latex][LaTeX]]
+     - [[#markdown][Markdown]]
+     - [[#org][Org]]
+   - [[#programming][Programming]]
+     - [[#c][C++]]
+     - [[#html][HTML]]
+     - [[#javascript][JavaScript]]
+     - [[#json][JSON]]
+     - [[#makefile][Makefile]]
+     - [[#php][PHP]]
+     - [[#r][R]]
+     - [[#scala][Scala]]
+     - [[#yaml][YAML]]
+   - [[#utilities][Utilities]]
+     - [[#restclient][Restclient]]
+   - [[#global-key-bindings][Global Key Bindings]]
 
 ** Core
 
