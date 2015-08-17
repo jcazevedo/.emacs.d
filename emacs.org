@@ -37,6 +37,8 @@ The latest Emacs version that I've run this configuration with is =24.5.1=.
          - [[#r][R]]
          - [[#scala][Scala]]
          - [[#yaml][YAML]]
+     - [[#utilities][Utilities]]
+         - [[#restclient][Restclient]]
      - [[#global-key-bindings][Global Key Bindings]]
 
 ** Core
@@ -1145,6 +1147,26 @@ programming sessions.\\
   (jcazevedo/require-packages '(yaml-mode))
   (add-hook 'yaml-mode-hook 'fci-mode)
   (add-hook 'yaml-mode-hook 'jcazevedo/enable-whitespace)
+#+END_SRC
+
+** Utilities
+
+   This section relates to modes that provide utilities that don't relate
+   directly to text or programming.
+
+*** Restclient
+
+    =restclient.el= is a tool to manually explore and test HTTP REST
+    webservices.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(restclient))
+#+END_SRC
+
+    Enable =restclient-mode= automatically for =*.http= buffers.
+
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'auto-mode-alist '("\\.http\\'" . restclient-mode))
 #+END_SRC
 
 ** Global Key Bindings
