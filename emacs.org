@@ -820,6 +820,13 @@ programming sessions.\\
   (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 #+END_SRC
 
+    Require =markdown-toc=, which enables creating a table of contents in
+    Markdown at point with =markdown-toc-generate-toc=.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(markdown-toc))
+#+END_SRC
+
 *** Org
 
     Org mode is for keeping notes, maintaining TODO lists, planning projects,
