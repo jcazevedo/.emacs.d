@@ -1,9 +1,11 @@
 *.elc
 *~
 .DS_Store
+bookmarks
 elpa
 emacs.el
 ensime
+eshell
 org-clock-save.el
 projectile-bookmarks.eld
 savefile
