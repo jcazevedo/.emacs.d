@@ -922,6 +922,17 @@ programming sessions.\\
         (quote (:link t :maxlevel 5 :fileskip0 t :compact t :narrow 80)))
 #+END_SRC
 
+    Switch a task from =TODO= to =STARTED= when clocking in.
+
+#+BEGIN_SRC emacs-lisp
+  (defun jcazevedo/clock-in-to-started (kw)
+    (when (not (and (boundp 'org-capture-mode) org-capture-mode))
+      (if (and (member (org-get-todo-state) (list "TODO")))
+          "STARTED")))
+
+  (setq org-clock-in-switch-to-state 'jcazevedo/clock-in-to-started)
+#+END_SRC
+
     Modify the agenda prefix to allow larger filenames.
 
 #+BEGIN_SRC emacs-lisp
