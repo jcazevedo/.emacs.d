@@ -1,5 +1,6 @@
                       Joao Azevedo's Emacs-specific files
 
+
 This is Joao Azevedo's Emacs-specific files. They can assume various forms
 throughout time, but currently they are a single .org file in a literate
 programming fashion [1], where code is intertwined with the description of its
