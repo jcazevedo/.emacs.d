@@ -801,14 +801,14 @@ programming sessions.\\
    Enable =text-mode= in common project files.
 
 #+BEGIN_SRC emacs-lisp
-  (add-to-list 'auto-mode-alist '("README" . markdown-mode))
-  (add-to-list 'auto-mode-alist '("LICENSE" . markdown-mode))
-  (add-to-list 'auto-mode-alist '("AUTHORS" . markdown-mode))
-  (add-to-list 'auto-mode-alist '("CONTRIBUTING" . markdown-mode))
-  (add-to-list 'auto-mode-alist '("INSTALL" . markdown-mode))
-  (add-to-list 'auto-mode-alist '("CHANGES" . markdown-mode))
-  (add-to-list 'auto-mode-alist '("CHANGELOG" . markdown-mode))
-  (add-to-list 'auto-mode-alist '("COPYING" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("README" . text-mode))
+  (add-to-list 'auto-mode-alist '("LICENSE" . text-mode))
+  (add-to-list 'auto-mode-alist '("AUTHORS" . text-mode))
+  (add-to-list 'auto-mode-alist '("CONTRIBUTING" . text-mode))
+  (add-to-list 'auto-mode-alist '("INSTALL" . text-mode))
+  (add-to-list 'auto-mode-alist '("CHANGES" . text-mode))
+  (add-to-list 'auto-mode-alist '("CHANGELOG" . text-mode))
+  (add-to-list 'auto-mode-alist '("COPYING" . text-mode))
 #+END_SRC
 
 *** LaTeX
