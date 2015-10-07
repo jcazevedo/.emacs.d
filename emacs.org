@@ -808,6 +808,7 @@ programming sessions.\\
   (add-to-list 'auto-mode-alist '("INSTALL" . markdown-mode))
   (add-to-list 'auto-mode-alist '("CHANGES" . markdown-mode))
   (add-to-list 'auto-mode-alist '("CHANGELOG" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("COPYING" . markdown-mode))
 #+END_SRC
 
 *** LaTeX
