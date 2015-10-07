@@ -1,7 +1,7 @@
 #+TITLE:  Joao Azevedo's Emacs Initialization File
 #+AUTHOR: Joao Azevedo
 #+EMAIL:  joao.c.azevedo@gmail.com
-#+DATE:   2015-10-01 Thu
+#+DATE:   2015-10-07 Thu
 
 This file is my Emacs initialization file. It's written in [[http://orgmode.org/][org-mode]] using
 [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it both
@@ -796,6 +796,18 @@ programming sessions.\\
 #+BEGIN_SRC emacs-lisp
   (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
   (setq visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow))
+#+END_SRC
+
+   Enable =text-mode= in common project files.
+
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'auto-mode-alist '("README" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("LICENSE" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("AUTHORS" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("CONTRIBUTING" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("INSTALL" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("CHANGES" . markdown-mode))
+  (add-to-list 'auto-mode-alist '("CHANGELOG" . markdown-mode))
 #+END_SRC
 
 *** LaTeX
