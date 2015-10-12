@@ -8,6 +8,7 @@ intended behavior.
 
 [1]: https://en.wikipedia.org/wiki/Literate_programming
 
+
 Installing
 ----------
 
@@ -29,12 +30,14 @@ When starting Emacs for the first time, third-party packages should be
 automatically downloaded and installed. If you encounter any errors at that
 stage, run `M-x package-refresh-contents` and restart Emacs.
 
+
 Updating
 --------
 
 When updating, you generally should only need to do a `git pull`, followed by a
 third-party packages update. For the latter, run `M-x package-list-packages`,
 then `U` followed by a `x`.
+
 
 License
 -------
