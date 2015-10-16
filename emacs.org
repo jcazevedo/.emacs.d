@@ -638,10 +638,14 @@ programming sessions.\\
 *** Selection
 
     Use Helm as an incremental completion and selection narrowing framework for
-    Emacs.
+    Emacs. Also use =helm-flx= for supposedly better sorting (I'm still testing
+    if that is true). =helm-flx= should be loaded before Helm for better
+    results.
 
 #+BEGIN_SRC emacs-lisp
-  (jcazevedo/require-packages '(helm helm-projectile))
+  (jcazevedo/require-packages '(helm-flx helm helm-projectile))
+
+  (helm-flx-mode +1)
 
   (require 'helm-config)
   (require 'helm-projectile)
