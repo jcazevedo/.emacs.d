@@ -1125,6 +1125,15 @@ programming sessions.\\
   (jcazevedo/require-packages '(json-mode))
 #+END_SRC
 
+    Set the indent level for JSON files to 2 spaces.
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'json-mode-hook
+            (lambda ()
+              (make-local-variable 'js-indent-level)
+              (setq js-indent-level 2)))
+#+END_SRC
+
 *** Makefile
 
     When editing Makefiles, allow usage of tabs.
