@@ -1,7 +1,7 @@
 #+TITLE:  Joao Azevedo's Emacs Initialization File
 #+AUTHOR: Joao Azevedo
 #+EMAIL:  joao.c.azevedo@gmail.com
-#+DATE:   2015-10-26 Mon
+#+DATE:   2015-11-02 Mon
 
 This file is my Emacs initialization file. It's written in [[http://orgmode.org/][org-mode]] using
 [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it both
@@ -982,6 +982,12 @@ programming sessions.\\
   (add-hook 'org-shiftleft-final-hook 'windmove-left)
   (add-hook 'org-shiftdown-final-hook 'windmove-down)
   (add-hook 'org-shiftright-final-hook 'windmove-right)
+#+END_SRC
+
+    Enable =org-habit= as an =org-module=.
+
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'org-modules 'org-habit)
 #+END_SRC
 
 ** Programming
