@@ -987,7 +987,9 @@ programming sessions.\\
     Enable =org-habit= as an =org-module=.
 
 #+BEGIN_SRC emacs-lisp
+  (require 'org-habit)
   (add-to-list 'org-modules 'org-habit)
+  (setq org-habit-graph-column 80)
 #+END_SRC
 
 ** Programming
