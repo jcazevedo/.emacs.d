@@ -1,7 +1,7 @@
 #+TITLE:  Joao Azevedo's Emacs Initialization File
 #+AUTHOR: Joao Azevedo
 #+EMAIL:  joao.c.azevedo@gmail.com
-#+DATE:   2015-11-02 Mon
+#+DATE:   2015-11-16 Mon
 
 This file is my Emacs initialization file. It's written in [[http://orgmode.org/][org-mode]] using
 [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it both
@@ -871,6 +871,12 @@ programming sessions.\\
 #+BEGIN_SRC emacs-lisp
   (setq org-directory "~/org")
   (setq org-agenda-files (list "~/org"))
+#+END_SRC
+
+    Include entries from the Emacs diary into Org mode's agenda.
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-agenda-include-diary t)
 #+END_SRC
 
     Add more org-todo-keywords and customize their colors.
