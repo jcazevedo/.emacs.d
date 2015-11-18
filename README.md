@@ -1,16 +1,13 @@
-                      Joao Azevedo's Emacs-specific files
-
+# Joao Azevedo's Emacs-specific files
 
 This directory tree contains Joao Azevedo's Emacs-specific files. They can
 assume various forms throughout time, but currently they are a single `.org`
-file in a literate programming fashion [1], where code is intertwined with the
+file in a [literate programming][lp] fashion, where code is intertwined with the
 description of its intended behavior.
 
-[1]: https://en.wikipedia.org/wiki/Literate_programming
+[lp]: https://en.wikipedia.org/wiki/Literate_programming
 
-
-Installing
-----------
+## Installing
 
 These files can usually be obtained by cloning the repository at
 `git@github.com:jcazevedo/emacs.d.git`. You need to ensure that the `init.el`
@@ -30,16 +27,12 @@ When starting Emacs for the first time, third-party packages should be
 automatically downloaded and installed. If you encounter any errors at that
 stage, run `M-x package-refresh-contents` and restart Emacs.
 
-
-Updating
---------
+## Updating
 
 When updating, you generally should only need to do a `git pull`, followed by a
 third-party packages update. For the latter, run `M-x package-list-packages`,
 then `U` followed by a `x`.
 
+## License
 
-License
--------
-
-See LICENSE
+See LICENSE.md
