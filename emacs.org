@@ -881,12 +881,6 @@ programming sessions.\\
   (setq org-agenda-files (list "~/org"))
 #+END_SRC
 
-    Include entries from the Emacs diary into Org mode's agenda.
-
-#+BEGIN_SRC emacs-lisp
-  (setq org-agenda-include-diary t)
-#+END_SRC
-
     Add more org-todo-keywords and customize their colors.
 
 #+BEGIN_SRC emacs-lisp
