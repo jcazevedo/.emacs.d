@@ -1,7 +1,7 @@
 #+TITLE:  Joao Azevedo's Emacs Initialization File
 #+AUTHOR: Joao Azevedo
 #+EMAIL:  joao.c.azevedo@gmail.com
-#+DATE:   2015-11-16 Mon
+#+DATE:   2015-11-23 Mon
 
 This file is my Emacs initialization file. It's written in [[http://orgmode.org/][org-mode]] using
 [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it both
@@ -626,6 +626,14 @@ programming sessions.\\
   (sp-use-paredit-bindings)
 
   (show-smartparens-global-mode +1)
+#+END_SRC
+
+   Make the cursor stay vertically centered.
+
+#+BEGIN_SRC emacs-lisp
+  (jcazevedo/require-packages '(centered-cursor-mode))
+  (require 'centered-cursor-mode)
+  (global-centered-cursor-mode +1)
 #+END_SRC
 
 *** Projects
