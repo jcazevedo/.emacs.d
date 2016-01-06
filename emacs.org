@@ -339,15 +339,6 @@ programming sessions.\\
   (sml/setup)
 #+END_SRC
 
-   Use Menlo on Mac OS X.
-
-#+BEGIN_SRC emacs-lisp
-  (if (string-equal system-type "darwin")
-      (set-fontset-font "fontset-default"
-                        'unicode
-                        '("Menlo" . "iso10646-1")))
-#+END_SRC
-
 ** Editor
 
    The following options are related to the editor experience under Emacs.
