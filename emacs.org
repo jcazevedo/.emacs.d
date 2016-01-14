@@ -1,7 +1,7 @@
 #+TITLE:  Joao Azevedo's Emacs Initialization File
 #+AUTHOR: Joao Azevedo
 #+EMAIL:  joao.c.azevedo@gmail.com
-#+DATE:   2016-01-06 Wed
+#+DATE:   2016-01-14 Thu
 
 This file is my Emacs initialization file. It's written in [[http://orgmode.org/][org-mode]] using
 [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it both
@@ -1192,6 +1192,14 @@ programming sessions.\\
                                (setq paragraph-separate "[ \t]*\\(//+\\|\\*?\\)[ \t]*$\\|^")
                                (setq paragraph-start "[ \t]*\\(//+\\|\\*?\\)[ \t]*\\(@[a-zA-Z]+\\>\\|$\\)\\|^\f")
                                (setq fill-paragraph-function 'c-fill-paragraph)))
+#+END_SRC
+
+    I don't really enjoy =ensime='s semantic highlighting, so this disables it
+    by default.
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'scala-mode-hook (lambda ()
+                               (setq ensime-sem-high-enabled-p nil)))
 #+END_SRC
 
 *** YAML
