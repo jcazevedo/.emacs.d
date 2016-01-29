@@ -1,7 +1,7 @@
 #+TITLE:  Joao Azevedo's Emacs Initialization File
 #+AUTHOR: Joao Azevedo
 #+EMAIL:  joao.c.azevedo@gmail.com
-#+DATE:   2016-01-14 Thu
+#+DATE:   2016-01-29 Fri
 
 This file is my Emacs initialization file. It's written in [[http://orgmode.org/][org-mode]] using
 [[http://orgmode.org/worg/org-contrib/babel/][org-babel]]. The idea behind using org-mode (and org-babel) is to keep it both
@@ -337,15 +337,6 @@ programming sessions.\\
 #+BEGIN_SRC emacs-lisp
   (setq sml/theme nil)
   (sml/setup)
-#+END_SRC
-
-   Change the font to be Inconsolata size 12. It works well on my MacBook Pro
-   15-inch retina with the default resolution.
-
-#+BEGIN_SRC emacs-lisp
-  (defvar jcazevedo/default-font "Inconsolata-12")
-  (set-face-attribute 'default nil :font jcazevedo/default-font)
-  (set-frame-font jcazevedo/default-font nil t)
 #+END_SRC
 
 ** Editor
@@ -990,6 +981,10 @@ programming sessions.\\
   (require 'org-habit)
   (add-to-list 'org-modules 'org-habit)
   (setq org-habit-graph-column 80)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-src-fontify-natively t)
 #+END_SRC
 
 ** Programming
