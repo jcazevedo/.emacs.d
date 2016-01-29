@@ -60,7 +60,7 @@ The latest Emacs version that I've run this configuration with is =24.5.1=.
    sets it to happen on each 50MB.
 
 #+BEGIN_SRC emacs-lisp
-  (setq gc-cons-threshold 50000000)
+  (setq gc-cons-threshold 20000000)
 #+END_SRC
 
    The following produces a warning when opening files bigger than 100MB.
