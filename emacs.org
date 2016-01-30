@@ -355,6 +355,15 @@ programming sessions.\\
   (sml/setup)
 #+END_SRC
 
+   Change the font to be Menlo size 12. It works well on my MacBook Pro
+   15-inch retina with the default resolution.
+
+#+BEGIN_SRC emacs-lisp
+  (defvar jcazevedo/default-font "Menlo-12")
+  (set-face-attribute 'default nil :font jcazevedo/default-font)
+  (set-frame-font jcazevedo/default-font nil t)
+#+END_SRC
+
 ** Editor
 
    The following options are related to the editor experience under Emacs.
