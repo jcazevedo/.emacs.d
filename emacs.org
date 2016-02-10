@@ -28,7 +28,7 @@ The latest Emacs version that I've run this configuration with is =24.5.1=.
      - [[#markdown][Markdown]]
      - [[#org][Org]]
    - [[#programming][Programming]]
-     - [[#c][C++]]
+     - [[#cc][C/C++]]
      - [[#html][HTML]]
      - [[#javascript][JavaScript]]
      - [[#json][JSON]]
@@ -1036,15 +1036,14 @@ programming sessions.\\
   (add-hook 'prog-mode-hook (lambda () (smartparens-mode +1)))
 #+END_SRC
 
-*** C++
+*** C/C++
 
-    When editing C++ source files, I'm mostly happy with the defaults. The only
-    thing I like different is the default indentation offset, which I prefer to
-    be at 4.
+    When editing C/C++ source files, use Google's C/C++ style.
 
 #+BEGIN_SRC emacs-lisp
-  (add-hook 'c++-mode-hook (lambda ()
-                             (setq c-basic-offset 4)))
+  (jcazevedo/require-packages '(google-c-style))
+  (add-hook 'c-mode-common-hook 'google-set-c-style)
+  (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 #+END_SRC
 
     I use a lot of C++ for algorithmic programming contests. I generally code my
