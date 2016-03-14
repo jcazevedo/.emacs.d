@@ -36,3 +36,4 @@
 (require 'jcazevedo-ui)
 (require 'jcazevedo-editor)
 (require 'jcazevedo-vc)
+(require 'jcazevedo-markdown)
