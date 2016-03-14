@@ -178,14 +178,11 @@
 (use-package yasnippet
   :ensure t
   :config
-  (define-key yas-minor-mode-map (kbd "<tab>") nil)
-  (define-key yas-minor-mode-map (kbd "TAB") nil)
-  (define-key yas-minor-mode-map (kbd "<C-tab>") 'yas-expand)
   (yas-global-mode 1))
 
-(use-package auto-complete
+(use-package company
   :ensure t
   :config
-  (ac-config-default))
+  (add-hook 'after-init-hook 'global-company-mode))
 
 (provide 'jcazevedo-editor)
