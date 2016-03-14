@@ -137,4 +137,42 @@
   :config
   (projectile-global-mode 1))
 
+(use-package helm
+  :ensure t
+  :demand t
+  :bind (("M-x" . helm-M-x)
+         ("C-x C-m" . helm-M-x)
+         ("M-y" . helm-show-kill-ring)
+         ("C-x b" . helm-mini)
+         ("C-x C-b" . helm-buffers-list)
+         ("C-x C-f" . helm-find-files)
+         ("C-h f" . helm-apropos)
+         ("C-h r" . helm-info-emacs)
+         ("C-h C-l" . helm-locate-library)
+         ("C-c f" . helm-recentf))
+  :init
+  (setq helm-split-window-in-side-p t
+        helm-buffers-fuzzy-matching t
+        helm-recentf-fuzzy-match t
+        helm-ff-search-library-in-sexp t
+        helm-ff-file-name-history-use-recentf t
+        helm-prevent-escaping-from-minibuffer t)
+  :config
+  (use-package helm-projectile
+    :ensure t
+    :init
+    (setq projectile-completion-system 'helm
+          helm-projectile-fuzzy-match t)
+    :config
+    (helm-projectile-on))
+  (use-package helm-descbinds
+    :ensure t)
+  (use-package helm-ag
+    :ensure t)
+  (helm-autoresize-mode 1)
+  (helm-descbinds-mode)
+  (helm-mode 1)
+  (bind-keys :map helm-map
+             ("<tab>" . helm-execute-persistent-action)))
+
 (provide 'jcazevedo-editor)
