@@ -107,8 +107,8 @@
     (whitespace-mode 1))
   (add-hook 'text-mode-hook 'jcazevedo/enable-whitespace-mode)
   (add-hook 'prog-mode-hook 'jcazevedo/enable-whitespace-mode)
-  (setq whitespace-line-column 80
-        whitespace-style '(face tabs empty trailing lines-tail)))
+  (setq-default whitespace-line-column 80
+                whitespace-style '(face tabs empty trailing lines-tail)))
 
 (use-package volatile-highlights
   :ensure t
