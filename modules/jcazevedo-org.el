@@ -1,5 +1,6 @@
 (use-package org
   :ensure t
+  :mode ("\\.org\\'")
   :bind (("C-c a" . org-agenda)
          ("C-c b" . org-iswitchb))
   :init
