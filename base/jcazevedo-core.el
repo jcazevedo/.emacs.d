@@ -15,4 +15,7 @@
   :bind (("C-h C-m" . discover-my-major)
          ("C-h M-m" . discover-my-mode)))
 
+(use-package noflet
+  :ensure t)
+
 (provide 'jcazevedo-core)
