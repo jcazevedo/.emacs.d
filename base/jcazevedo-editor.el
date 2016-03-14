@@ -175,4 +175,9 @@
   (bind-keys :map helm-map
              ("<tab>" . helm-execute-persistent-action)))
 
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1))
+
 (provide 'jcazevedo-editor)
