@@ -7,22 +7,15 @@
 
 (use-package gitattributes-mode
   :ensure t
-  :mode ("/\\.gitattributes\\'"
-         "/\\.git/info/attributes\\'"
-         "/git/attributes\\'"))
+  :mode "/\\.gitattributes\\'" "/\\.git/info/attributes\\'" "/git/attributes\\'")
 
 (use-package gitconfig-mode
   :ensure t
-  :mode ("/\\.gitconfig\\'"
-         "/\\.git/config\\'"
-         "/git/config\\'"
-         "/\\.gitmodules\\'"))
+  :mode "/\\.gitconfig\\'" "/\\.git/config\\'" "/git/config\\'" "/\\.gitmodules\\'")
 
 (use-package gitignore-mode
   :ensure t
-  :mode ("/\\.gitignore\\'"
-         "/\\.git/info/exclude\\'"
-         "/git/ignore\\'"))
+  :mode "/\\.gitignore\\'" "/\\.git/info/exclude\\'" "/git/ignore\\'")
 
 (use-package diff-hl
   :ensure t
