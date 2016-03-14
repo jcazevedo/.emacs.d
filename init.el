@@ -40,3 +40,4 @@
 (require 'jcazevedo-markdown)
 (require 'jcazevedo-org)
 (require 'jcazevedo-scala)
+(require 'jcazevedo-yaml)
