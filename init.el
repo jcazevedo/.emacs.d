@@ -35,4 +35,5 @@
 (require 'jcazevedo-core)
 (require 'jcazevedo-ui)
 (require 'jcazevedo-editor)
+(require 'jcazevedo-projects)
 (require 'jcazevedo-vc)
