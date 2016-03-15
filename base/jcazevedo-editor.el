@@ -68,6 +68,10 @@
 
 (use-package crux
   :ensure t
+  :commands (crux-rename-file-and-buffer crux-delete-file-and-buffer)
+  :init
+  (use-package seq
+    :ensure t)
   :config
   (crux-with-region-or-buffer indent-region)
   (crux-with-region-or-buffer untabify)
