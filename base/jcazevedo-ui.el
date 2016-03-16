@@ -44,4 +44,16 @@
   (setq sml/theme nil)
   (sml/setup))
 
+(use-package nlinum
+  :ensure t
+  :config
+  (add-hook 'nlinum-mode-hook
+            (lambda ()
+              (unless (boundp 'nlinum--width)
+                (setq nlinum--width
+                      (length (number-to-string
+                               (count-lines (point-min) (point-max))))))))
+  (add-hook 'text-mode-hook (lambda () (nlinum-mode 1)))
+  (add-hook 'prog-mode-hook (lambda () (nlinum-mode 1))))
+
 (provide 'jcazevedo-ui)
