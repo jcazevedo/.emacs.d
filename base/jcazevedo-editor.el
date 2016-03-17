@@ -189,4 +189,10 @@
   :config
   (add-hook 'after-init-hook 'global-company-mode))
 
+(defun unfill-paragraph (&optional region)
+  (interactive (progn (barf-if-buffer-read-only) '(t)))
+  (let ((fill-column (point-max))
+        (emacs-lisp-docstring-fill-column t))
+    (fill-paragraph nil region)))
+
 (provide 'jcazevedo-editor)
