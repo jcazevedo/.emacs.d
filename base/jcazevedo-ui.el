@@ -34,7 +34,13 @@
 (set-frame-font jcazevedo/default-font nil t)
 
 (use-package zenburn-theme
-  :ensure t)
+  :ensure t
+  :init
+  (when (fboundp 'fringe-mode)
+    (fringe-mode '(4 . 0)))
+  (set-face-attribute 'vertical-border
+                      nil
+                      :foreground "#4F4F4F"))
 
 (use-package smart-mode-line
   :ensure t
