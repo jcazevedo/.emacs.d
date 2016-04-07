@@ -37,6 +37,7 @@
 (require 'jcazevedo-editor)
 (require 'jcazevedo-vc)
 
+(require 'jcazevedo-c)
 (require 'jcazevedo-markdown)
 (require 'jcazevedo-org)
 (require 'jcazevedo-php)
