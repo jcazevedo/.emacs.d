@@ -38,6 +38,7 @@
 (require 'jcazevedo-vc)
 
 (require 'jcazevedo-c)
+(require 'jcazevedo-docker)
 (require 'jcazevedo-markdown)
 (require 'jcazevedo-org)
 (require 'jcazevedo-php)
