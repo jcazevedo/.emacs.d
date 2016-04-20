@@ -44,3 +44,4 @@
 (require 'jcazevedo-php)
 (require 'jcazevedo-scala)
 (require 'jcazevedo-yaml)
+(require 'jcazevedo-ruby)
