@@ -13,10 +13,13 @@
     :ensure t)
   (use-package yari
     :ensure t)
+  (use-package rubocop
+    :ensure t)
   (add-hook 'ruby-mode-hook (lambda ()
                               (inf-ruby-minor-mode +1)
                               (ruby-tools-mode +1)
-                              (subword-mode +1))))
+                              (subword-mode +1)
+                              (rubocop-mode))))
 
 (use-package rvm
   :ensure t
