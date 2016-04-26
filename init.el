@@ -39,9 +39,10 @@
 
 (require 'jcazevedo-c)
 (require 'jcazevedo-docker)
+(require 'jcazevedo-javascript)
 (require 'jcazevedo-markdown)
 (require 'jcazevedo-org)
 (require 'jcazevedo-php)
+(require 'jcazevedo-ruby)
 (require 'jcazevedo-scala)
 (require 'jcazevedo-yaml)
-(require 'jcazevedo-ruby)
