@@ -40,6 +40,7 @@
 (require 'jcazevedo-c)
 (require 'jcazevedo-docker)
 (require 'jcazevedo-javascript)
+(require 'jcazevedo-json)
 (require 'jcazevedo-markdown)
 (require 'jcazevedo-org)
 (require 'jcazevedo-php)
