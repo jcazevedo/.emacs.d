@@ -70,6 +70,12 @@
   (setq sml/no-confirm-load-theme 1)
   :config
   (setq sml/theme nil)
-  (sml/setup))
+  (sml/setup)
+  (set-face-attribute 'mode-line
+                      nil
+                      :box '(:line-width 8 :color "#2B2B2B"))
+  (set-face-attribute 'mode-line-inactive
+                      nil
+                      :box '(:line-width 8 :color "#383838")))
 
 (provide 'jcazevedo-ui)
