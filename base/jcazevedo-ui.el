@@ -42,6 +42,28 @@
                       nil
                       :foreground "#4F4F4F"))
 
+(use-package linum
+  :ensure t
+  :init
+  (defun jcazevedo/enable-linum-mode ()
+    (linum-mode 1))
+  (add-hook 'text-mode-hook 'jcazevedo/enable-linum-mode)
+  (add-hook 'prog-mode-hook 'jcazevedo/enable-linum-mode)
+  (add-hook 'linum-before-numbering-hook
+            (lambda ()
+              (setq-local linum-format-fmt
+                          (let ((w (length (number-to-string
+                                            (count-lines (point-min) (point-max))))))
+                            (concat "  %" (number-to-string w) "d ")))))
+  (defun linum-format-func (line)
+     (propertize (format linum-format-fmt line) 'face 'linum))
+  :config
+  (setq linum-format 'linum-format-func)
+  (set-face-attribute 'linum
+                      nil
+                      :height 0.8
+                      :weight 'light))
+
 (use-package smart-mode-line
   :ensure t
   :init
