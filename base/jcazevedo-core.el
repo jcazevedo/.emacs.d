@@ -18,4 +18,18 @@
 (use-package noflet
   :ensure t)
 
+(when (eq system-type 'darwin)
+  (progn
+    (when (memq window-system '(mac ns))
+      (use-package exec-path-from-shell
+        :ensure t
+        :init
+        (setq exec-path-from-shell-check-startup-files nil)
+        :config
+        (exec-path-from-shell-initialize)))
+    (setq ns-use-native-fullscreen nil)
+    (setq mac-command-modifier 'meta)
+    (setq mac-option-modifier 'super)
+    (setq ns-function-modifier 'hyper)))
+
 (provide 'jcazevedo-core)

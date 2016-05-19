@@ -15,13 +15,6 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(when (eq system-type 'darwin)
-  (progn
-    (setq ns-use-native-fullscreen nil)
-    (setq mac-command-modifier 'meta)
-    (setq mac-option-modifier 'super)
-    (setq ns-function-modifier 'hyper)))
-
 (defun jcazevedo/fullscreen ()
   (interactive)
   (if (string-match "Carbon" (emacs-version))
