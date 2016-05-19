@@ -15,17 +15,19 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(when (eq system-type 'darwin)
+  (progn
+    (setq ns-use-native-fullscreen nil)
+    (setq mac-command-modifier 'meta)
+    (setq mac-option-modifier 'super)
+    (setq ns-function-modifier 'hyper)))
+
 (defun jcazevedo/fullscreen ()
   (interactive)
-  (cond
-   ((eq system-type 'darwin)
-    (set-frame-parameter
-     nil 'fullscreen
-     (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
-   ((eq window-system 'x)
-    (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
-                           '(2 "_NET_WM_STATE_FULLSCREEN" 0)))
-   (error "Unable to toggle fullscreen")))
+  (if (string-match "Carbon" (emacs-version))
+      (set-frame-parameter nil 'fullscreen
+                           (when (not (frame-parameter nil 'fullscreen)) 'fullboth))
+    (toggle-frame-fullscreen)))
 
 (global-set-key (kbd "<f11>") 'jcazevedo/fullscreen)
 
