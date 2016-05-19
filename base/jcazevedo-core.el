@@ -28,8 +28,10 @@
         :config
         (exec-path-from-shell-initialize)))
     (setq ns-use-native-fullscreen nil)
+    (setq mac-option-key-is-meta nil)
+    (setq mac-command-key-is-meta t)
     (setq mac-command-modifier 'meta)
-    (setq mac-option-modifier 'super)
+    (setq mac-option-modifier nil)
     (setq ns-function-modifier 'hyper)))
 
 (provide 'jcazevedo-core)
