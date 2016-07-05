@@ -1,11 +1,6 @@
 # Joao Azevedo's Emacs-specific files
 
-This directory tree contains Joao Azevedo's Emacs-specific files. They can
-assume various forms throughout time, but currently they are a single `.org`
-file in a [literate programming][lp] fashion, where code is intertwined with the
-description of its intended behavior.
-
-[lp]: https://en.wikipedia.org/wiki/Literate_programming
+This directory tree contains Joao Azevedo's Emacs-specific files.
 
 ## Installing
 
