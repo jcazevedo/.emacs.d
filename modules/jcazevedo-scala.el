@@ -46,7 +46,6 @@
                       paragraph-start "[ \t]*\\(//+\\|\\*?\\)[ \t]*\\(@[a-zA-Z]+\\>\\|$\\)\\|^\f"
                       fill-paragraph-function 'c-fill-paragraph
                       ensime-sem-high-enabled-p nil)))
-    ;; (add-hook 'ensime-mode-hook 'jcazevedo/enable-eldoc-scala)
-    ))
+    (add-hook 'ensime-mode-hook 'jcazevedo/enable-eldoc-scala)))
 
 (provide 'jcazevedo-scala)
