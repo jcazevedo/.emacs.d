@@ -19,8 +19,12 @@
 
 (require 'package)
 (setq package-enable-at-startup nil)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
+(setq
+ use-package-always-ensure t
+ package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                    ("org" . "http://orgmode.org/elpa/")
+                    ("melpa" . "http://melpa.org/packages/")
+                    ("melpa-stable" . "http://stable.melpa.org/packages/")))
 
 (setq package-user-dir jcazevedo/config-packages-dir)
 (package-initialize)
