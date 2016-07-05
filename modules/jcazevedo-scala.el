@@ -4,6 +4,7 @@
   :config
   (use-package ensime
     :ensure t
+    :pin melpa-stable
     :init
     (defun jcazevedo/configure-ensime ()
       (cond
