@@ -24,9 +24,11 @@
 
 (global-set-key (kbd "<f11>") 'jcazevedo/fullscreen)
 
-(defvar jcazevedo/default-font "Menlo-12")
-(set-face-attribute 'default nil :font jcazevedo/default-font)
-(set-frame-font jcazevedo/default-font nil t)
+(when (eq system-type 'darwin)
+  (progn
+    (defvar jcazevedo/default-font "Menlo-12")
+    (set-face-attribute 'default nil :font jcazevedo/default-font)
+    (set-frame-font jcazevedo/default-font nil t)))
 
 (use-package zenburn-theme
   :ensure t
