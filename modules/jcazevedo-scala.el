@@ -4,7 +4,6 @@
   :config
   (use-package ensime
     :ensure t
-    :pin melpa-stable
     :init
     (defun jcazevedo/configure-ensime ()
       (cond
@@ -35,6 +34,7 @@
                     (when (ensime-connected-p)
                       (ensime-print-type-at-point))))
       (eldoc-mode +1))
+    (setq ensime-startup-snapshot-notification nil)
     :config
     (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
     (add-hook 'scala-mode-hook 'jcazevedo/configure-ensime)
