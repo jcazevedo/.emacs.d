@@ -48,6 +48,7 @@
 (require 'jcazevedo-markdown)
 (require 'jcazevedo-org)
 (require 'jcazevedo-php)
+(require 'jcazevedo-r)
 (require 'jcazevedo-ruby)
 (require 'jcazevedo-scala)
 (require 'jcazevedo-yaml)
