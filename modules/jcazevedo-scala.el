@@ -28,12 +28,6 @@
             (noflet ((ensime-config-find (&rest _) file))
                     (save-window-excursion
                       (ensime)))))))
-    (defun jcazevedo/enable-eldoc-scala ()
-      (setq-local eldoc-documentation-function
-                  (lambda ()
-                    (when (ensime-connected-p)
-                      (ensime-print-type-at-point))))
-      (eldoc-mode +1))
     (setq ensime-startup-snapshot-notification nil)
     :config
     (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
@@ -45,7 +39,6 @@
                       paragraph-separate "[ \t]*\\(//+\\|\\*?\\)[ \t]*$\\|^"
                       paragraph-start "[ \t]*\\(//+\\|\\*?\\)[ \t]*\\(@[a-zA-Z]+\\>\\|$\\)\\|^\f"
                       fill-paragraph-function 'c-fill-paragraph
-                      ensime-sem-high-enabled-p nil)))
-    (add-hook 'ensime-mode-hook 'jcazevedo/enable-eldoc-scala)))
+                      ensime-sem-high-enabled-p nil)))))
 
 (provide 'jcazevedo-scala)
