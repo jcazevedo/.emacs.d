@@ -1,6 +1,6 @@
 (use-package scala-mode
   :ensure t
-  :mode ("\\.\\(scala\\|sbt\\)\\'" . scala-mode)
+  :mode "\\.\\(scala\\|sbt\\)\\'"
   :config
   (use-package ensime
     :ensure t
