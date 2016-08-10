@@ -3,6 +3,7 @@
   :mode "\\.\\(scala\\|sbt\\)\\'")
 
 (use-package ensime
+  :pin melpa-stable
   :ensure t
   :after scala-mode
   :init

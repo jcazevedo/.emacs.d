@@ -23,7 +23,8 @@
  use-package-always-ensure t
  package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                     ("org" . "http://orgmode.org/elpa/")
-                    ("melpa" . "http://melpa.org/packages/")))
+                    ("melpa" . "http://melpa.org/packages/")
+                    ("melpa-stable" . "http://stable.melpa.org/packages/")))
 
 (setq package-user-dir jcazevedo/config-packages-dir)
 (package-initialize)
