@@ -1,6 +1,8 @@
 (use-package scala-mode
   :ensure t
-  :mode "\\.\\(scala\\|sbt\\)\\'")
+  :mode "\\.\\(scala\\|sbt\\)\\'"
+  :init
+  (setq scala-indent:use-javadoc-style t))
 
 (use-package ensime
   :pin melpa-stable
