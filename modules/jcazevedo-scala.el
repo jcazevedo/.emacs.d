@@ -5,7 +5,6 @@
   (setq scala-indent:use-javadoc-style t))
 
 (use-package ensime
-  :pin melpa-stable
   :ensure t
   :after scala-mode
   :init
@@ -22,20 +21,9 @@
                    (and (s-contains? "*ENSIME-" bufname)
                         (s-contains? (file-name-nondirectory project-name) bufname)))
                  (buffer-list)))))
-  (defun jcazevedo/maybe-start-ensime ()
-    (when (buffer-file-name)
-      (let ((ensime-buffer (jcazevedo/ensime-buffer-for-file (buffer-file-name)))
-            (file (ensime-config-find-file (buffer-file-name)))
-            (is-source-file (s-matches? (rx (or "/src/" "/test/")) (buffer-file-name))))
-
-        (when (and is-source-file (null ensime-buffer))
-          (noflet ((ensime-config-find (&rest _) file))
-            (save-window-excursion
-              (ensime)))))))
   (setq ensime-startup-snapshot-notification nil)
   (setq ensime-sem-high-enabled-p nil)
   (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-  (add-hook 'scala-mode-hook 'jcazevedo/configure-ensime)
-  (add-hook 'scala-mode-hook 'jcazevedo/maybe-start-ensime))
+  (add-hook 'scala-mode-hook 'jcazevedo/configure-ensime))
 
 (provide 'jcazevedo-scala)
