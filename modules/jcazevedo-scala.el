@@ -23,7 +23,6 @@
                  (buffer-list)))))
   (setq ensime-startup-snapshot-notification nil)
   (setq ensime-sem-high-enabled-p nil)
-  (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
   (add-hook 'scala-mode-hook 'jcazevedo/configure-ensime))
 
 (provide 'jcazevedo-scala)
